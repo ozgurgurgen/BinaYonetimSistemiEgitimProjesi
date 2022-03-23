@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BinaYonetimSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteBina" Type="int" Nullable="false" />
+          <Property Name="BinaNo" Type="nvarchar" MaxLength="6" />
+          <Property Name="DaireNo" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Borc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BorcTuru" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="BorcAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BorcAciklamasi" Type="nvarchar" MaxLength="250" />
+          <Property Name="BorcTarihi" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FaturaNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FaturaTutari" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KisiBasinaDusenTutar" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KasadanOdenecek" Type="bit" />
+        </EntityType>
+        <EntityType Name="Duyurular">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteBina" Type="int" Nullable="false" />
+          <Property Name="DuyuruBasligi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DuyuruAciklamasi" Type="nvarchar" MaxLength="250" />
+          <Property Name="DuyuruTarihi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DuyuruBitisTarihi" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Kasa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteBina" Type="int" />
+          <Property Name="KasaTutarı" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="KasaGeçmişi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HareketTutarı" Type="varchar" MaxLength="10" />
+          <Property Name="BorcId" Type="int" />
+          <Property Name="SiteBinaId" Type="int" />
+          <Property Name="GelirMi" Type="bit" />
+          <Property Name="HareketTarihi" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="KullaniciBorc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciId" Type="int" Nullable="false" />
+          <Property Name="BorcId" Type="int" Nullable="false" />
+          <Property Name="OdemeZamani" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Parola" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="30" />
+          <Property Name="Adres" Type="int" Nullable="false" />
+          <Property Name="Yetki" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SiteBina">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Il" Type="nvarchar" MaxLength="15" />
+          <Property Name="Ilce" Type="nvarchar" MaxLength="15" />
+          <Property Name="Mahalle" Type="nvarchar" MaxLength="30" />
+          <Property Name="SokakCadde" Type="nvarchar" MaxLength="30" />
+          <Property Name="SiteBinaAd" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Adres_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Duyurular_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="1" />
+          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Duyurular">
+              <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kasa_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="0..1" />
+          <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kasa">
+              <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KasaGeçmişi_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="0..1" />
+          <End Role="KasaGeçmişi" Type="Self.KasaGeçmişi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KasaGeçmişi">
+              <PropertyRef Name="SiteBinaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciBorc_Borc">
+          <End Role="Borc" Type="Self.Borc" Multiplicity="1" />
+          <End Role="KullaniciBorc" Type="Self.KullaniciBorc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Borc">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciBorc">
+              <PropertyRef Name="BorcId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciBorc_Kullanicilar">
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+          <End Role="KullaniciBorc" Type="Self.KullaniciBorc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciBorc">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kullanicilar_Adres">
+          <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
+          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kullanicilar">
+              <PropertyRef Name="Adres" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BinaYonetimSistemiModelStoreContainer">
+          <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Borc" EntityType="Self.Borc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kasa" EntityType="Self.Kasa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KasaGeçmişi" EntityType="Self.KasaGeçmişi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KullaniciBorc" EntityType="Self.KullaniciBorc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SiteBina" EntityType="Self.SiteBina" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Adres_SiteBina" Association="Self.FK_Adres_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Duyurular_SiteBina" Association="Self.FK_Duyurular_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Duyurular" EntitySet="Duyurular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kasa_SiteBina" Association="Self.FK_Kasa_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Kasa" EntitySet="Kasa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KasaGeçmişi_SiteBina" Association="Self.FK_KasaGeçmişi_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="KasaGeçmişi" EntitySet="KasaGeçmişi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciBorc_Borc" Association="Self.FK_KullaniciBorc_Borc">
+            <End Role="Borc" EntitySet="Borc" />
+            <End Role="KullaniciBorc" EntitySet="KullaniciBorc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciBorc_Kullanicilar" Association="Self.FK_KullaniciBorc_Kullanicilar">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="KullaniciBorc" EntitySet="KullaniciBorc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kullanicilar_Adres" Association="Self.FK_Kullanicilar_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BinaYonetimSistemiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteBina" Type="Int32" Nullable="false" />
+          <Property Name="BinaNo" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="DaireNo" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SiteBina1" Relationship="Self.FK_Adres_SiteBina" FromRole="Adres" ToRole="SiteBina" />
+          <NavigationProperty Name="Kullanicilar" Relationship="BinaYonetimSistemiModel.FK_Kullanicilar_Adres" FromRole="Adres" ToRole="Kullanicilar" />
+        </EntityType>
+        <EntityType Name="Borc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BorcTuru" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BorcAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BorcAciklamasi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BorcTarihi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FaturaNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FaturaTutari" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KisiBasinaDusenTutar" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KasadanOdenecek" Type="Boolean" />
+          <NavigationProperty Name="KullaniciBorc" Relationship="Self.FK_KullaniciBorc_Borc" FromRole="Borc" ToRole="KullaniciBorc" />
+        </EntityType>
+        <EntityType Name="Duyurular">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteBina" Type="Int32" Nullable="false" />
+          <Property Name="DuyuruBasligi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DuyuruAciklamasi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DuyuruTarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DuyuruBitisTarihi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SiteBina1" Relationship="Self.FK_Duyurular_SiteBina" FromRole="Duyurular" ToRole="SiteBina" />
+        </EntityType>
+        <EntityType Name="Kasa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteBina" Type="Int32" />
+          <Property Name="KasaTutarı" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SiteBina1" Relationship="Self.FK_Kasa_SiteBina" FromRole="Kasa" ToRole="SiteBina" />
+        </EntityType>
+        <EntityType Name="KasaGeçmişi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HareketTutarı" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BorcId" Type="Int32" />
+          <Property Name="SiteBinaId" Type="Int32" />
+          <Property Name="GelirMi" Type="Boolean" />
+          <Property Name="HareketTarihi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SiteBina" Relationship="Self.FK_KasaGeçmişi_SiteBina" FromRole="KasaGeçmişi" ToRole="SiteBina" />
+        </EntityType>
+        <EntityType Name="KullaniciBorc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+          <Property Name="BorcId" Type="Int32" Nullable="false" />
+          <Property Name="OdemeZamani" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Borc" Relationship="Self.FK_KullaniciBorc_Borc" FromRole="KullaniciBorc" ToRole="Borc" />
+          <NavigationProperty Name="Kullanicilar" Relationship="BinaYonetimSistemiModel.FK_KullaniciBorc_Kullanicilar" FromRole="KullaniciBorc" ToRole="Kullanicilar" />
+        </EntityType>
+        <EntityType Name="SiteBina">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Il" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Ilce" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Mahalle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SokakCadde" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SiteBinaAd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adres" Relationship="Self.FK_Adres_SiteBina" FromRole="SiteBina" ToRole="Adres" />
+          <NavigationProperty Name="Duyurular" Relationship="Self.FK_Duyurular_SiteBina" FromRole="SiteBina" ToRole="Duyurular" />
+          <NavigationProperty Name="Kasa" Relationship="Self.FK_Kasa_SiteBina" FromRole="SiteBina" ToRole="Kasa" />
+          <NavigationProperty Name="KasaGeçmişi" Relationship="Self.FK_KasaGeçmişi_SiteBina" FromRole="SiteBina" ToRole="KasaGeçmişi" />
+        </EntityType>
+        <Association Name="FK_Adres_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciBorc_Borc">
+          <End Role="Borc" Type="Self.Borc" Multiplicity="1" />
+          <End Role="KullaniciBorc" Type="Self.KullaniciBorc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Borc">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciBorc">
+              <PropertyRef Name="BorcId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Duyurular_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="1" />
+          <End Role="Duyurular" Type="Self.Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Duyurular">
+              <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kasa_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="0..1" />
+          <End Role="Kasa" Type="Self.Kasa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kasa">
+              <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KasaGeçmişi_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="0..1" />
+          <End Role="KasaGeçmişi" Type="Self.KasaGeçmişi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KasaGeçmişi">
+              <PropertyRef Name="SiteBinaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BinaYonetimSistemiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adres" EntityType="Self.Adres" />
+          <EntitySet Name="Borc" EntityType="Self.Borc" />
+          <EntitySet Name="Duyurular" EntityType="Self.Duyurular" />
+          <EntitySet Name="Kasa" EntityType="Self.Kasa" />
+          <EntitySet Name="KasaGeçmişi" EntityType="Self.KasaGeçmişi" />
+          <EntitySet Name="KullaniciBorc" EntityType="Self.KullaniciBorc" />
+          <EntitySet Name="SiteBina" EntityType="Self.SiteBina" />
+          <AssociationSet Name="FK_Adres_SiteBina" Association="Self.FK_Adres_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciBorc_Borc" Association="Self.FK_KullaniciBorc_Borc">
+            <End Role="Borc" EntitySet="Borc" />
+            <End Role="KullaniciBorc" EntitySet="KullaniciBorc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Duyurular_SiteBina" Association="Self.FK_Duyurular_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Duyurular" EntitySet="Duyurular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kasa_SiteBina" Association="Self.FK_Kasa_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Kasa" EntitySet="Kasa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KasaGeçmişi_SiteBina" Association="Self.FK_KasaGeçmişi_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="KasaGeçmişi" EntitySet="KasaGeçmişi" />
+          </AssociationSet>
+          <EntitySet Name="Kullanicilar" EntityType="BinaYonetimSistemiModel.Kullanicilar" />
+          <AssociationSet Name="FK_Kullanicilar_Adres" Association="BinaYonetimSistemiModel.FK_Kullanicilar_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KullaniciBorc_Kullanicilar" Association="BinaYonetimSistemiModel.FK_KullaniciBorc_Kullanicilar">
+            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+            <End Role="KullaniciBorc" EntitySet="KullaniciBorc" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Parola" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="Int32" Nullable="false" />
+          <Property Name="Yetki" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adres1" Relationship="BinaYonetimSistemiModel.FK_Kullanicilar_Adres" FromRole="Kullanicilar" ToRole="Adres" />
+          <NavigationProperty Name="KullaniciBorc" Relationship="BinaYonetimSistemiModel.FK_KullaniciBorc_Kullanicilar" FromRole="Kullanicilar" ToRole="KullaniciBorc" />
+        </EntityType>
+        <Association Name="FK_Kullanicilar_Adres">
+          <End Type="BinaYonetimSistemiModel.Adres" Role="Adres" Multiplicity="1" />
+          <End Type="BinaYonetimSistemiModel.Kullanicilar" Role="Kullanicilar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Kullanicilar">
+              <PropertyRef Name="Adres" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KullaniciBorc_Kullanicilar">
+          <End Type="BinaYonetimSistemiModel.Kullanicilar" Role="Kullanicilar" Multiplicity="1" />
+          <End Type="BinaYonetimSistemiModel.KullaniciBorc" Role="KullaniciBorc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanicilar">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="KullaniciBorc">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BinaYonetimSistemiModelStoreContainer" CdmEntityContainer="BinaYonetimSistemiEntities">
+          <EntitySetMapping Name="Adres">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.Adres">
+              <MappingFragment StoreEntitySet="Adres">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteBina" ColumnName="SiteBina" />
+                <ScalarProperty Name="BinaNo" ColumnName="BinaNo" />
+                <ScalarProperty Name="DaireNo" ColumnName="DaireNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Borc">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.Borc">
+              <MappingFragment StoreEntitySet="Borc">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BorcTuru" ColumnName="BorcTuru" />
+                <ScalarProperty Name="BorcAdi" ColumnName="BorcAdi" />
+                <ScalarProperty Name="BorcAciklamasi" ColumnName="BorcAciklamasi" />
+                <ScalarProperty Name="BorcTarihi" ColumnName="BorcTarihi" />
+                <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
+                <ScalarProperty Name="FaturaTutari" ColumnName="FaturaTutari" />
+                <ScalarProperty Name="KisiBasinaDusenTutar" ColumnName="KisiBasinaDusenTutar" />
+                <ScalarProperty Name="KasadanOdenecek" ColumnName="KasadanOdenecek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Duyurular">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.Duyurular">
+              <MappingFragment StoreEntitySet="Duyurular">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteBina" ColumnName="SiteBina" />
+                <ScalarProperty Name="DuyuruBasligi" ColumnName="DuyuruBasligi" />
+                <ScalarProperty Name="DuyuruAciklamasi" ColumnName="DuyuruAciklamasi" />
+                <ScalarProperty Name="DuyuruTarihi" ColumnName="DuyuruTarihi" />
+                <ScalarProperty Name="DuyuruBitisTarihi" ColumnName="DuyuruBitisTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kasa">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.Kasa">
+              <MappingFragment StoreEntitySet="Kasa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SiteBina" ColumnName="SiteBina" />
+                <ScalarProperty Name="KasaTutarı" ColumnName="KasaTutarı" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KasaGeçmişi">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.KasaGeçmişi">
+              <MappingFragment StoreEntitySet="KasaGeçmişi">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="HareketTutarı" ColumnName="HareketTutarı" />
+                <ScalarProperty Name="BorcId" ColumnName="BorcId" />
+                <ScalarProperty Name="SiteBinaId" ColumnName="SiteBinaId" />
+                <ScalarProperty Name="GelirMi" ColumnName="GelirMi" />
+                <ScalarProperty Name="HareketTarihi" ColumnName="HareketTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KullaniciBorc">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.KullaniciBorc">
+              <MappingFragment StoreEntitySet="KullaniciBorc">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="BorcId" ColumnName="BorcId" />
+                <ScalarProperty Name="OdemeZamani" ColumnName="OdemeZamani" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteBina">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.SiteBina">
+              <MappingFragment StoreEntitySet="SiteBina">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Il" ColumnName="Il" />
+                <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+                <ScalarProperty Name="Mahalle" ColumnName="Mahalle" />
+                <ScalarProperty Name="SokakCadde" ColumnName="SokakCadde" />
+                <ScalarProperty Name="SiteBinaAd" ColumnName="SiteBinaAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
