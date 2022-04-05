@@ -24,7 +24,6 @@ namespace BinaYonetimSistemi.Controller
             db.SaveChanges();
 
             new Screens.AltEkranlar.Tamamlandi("Yeni Duyuru Ekleme İşlemi Başarıyla Tamamlandı").Show();
-            Console.WriteLine("asdasd");
 
             
         }
