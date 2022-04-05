@@ -19,9 +19,9 @@ namespace BinaYonetimSistemi.Controller
             yeniBorc.BorcTuru = borcTuru;
             yeniBorc.BorcAdi = borcAdi;
             yeniBorc.FaturaTarihi = faturaTarihi;
-            yeniBorc.FaturaTutari = Convert.ToDecimal(faturaTutari.Remove(0,1));
+            yeniBorc.FaturaTutari = Convert.ToDecimal(faturaTutari.Remove(0, 1));
             yeniBorc.FaturaNo = faturaNo;
-            yeniBorc.KisiBasinaDusenTutar = Convert.ToDecimal(daireBasiDusenTutar.Remove(0,1));
+            yeniBorc.KisiBasinaDusenTutar = Convert.ToDecimal(daireBasiDusenTutar.Remove(0, 1));
             yeniBorc.KasadanOdenecek = kasadanOdenecek;
             yeniBorc.BorcAciklamasi = borcAciklamasi;
             yeniBorc.BorcTarihi = DateTime.Now.ToString();
@@ -34,7 +34,7 @@ namespace BinaYonetimSistemi.Controller
                         where borcum.FaturaNo == faturaNo
                         select borcum;
             var borc = sorgu.FirstOrDefault();
-            new Kasa().HareketEkle(faturaTutari,borc.Id, GirisEkrani.user.Adres1.SiteBina,false);
+            new Kasa().HareketEkle(faturaTutari, borc.Id, GirisEkrani.user.Adres1.SiteBina, false);
         }
 
         public void Ekle(string borcTuru, string borcAdi, string faturaTarihi, string faturaTutari, string faturaNo,
@@ -55,7 +55,7 @@ namespace BinaYonetimSistemi.Controller
             yeniBorc.BorcTuru = borcTuru;
             yeniBorc.BorcAdi = borcAdi;
             yeniBorc.FaturaTarihi = faturaTarihi;
-            yeniBorc.FaturaTutari = Convert.ToDecimal(faturaTutari.Remove(0,1));
+            yeniBorc.FaturaTutari = Convert.ToDecimal(faturaTutari.Remove(0, 1));
             yeniBorc.FaturaNo = faturaNo;
             yeniBorc.KasadanOdenecek = kasadanOdenecek;
             yeniBorc.BorcAciklamasi = borcAciklamasi;
@@ -126,17 +126,28 @@ namespace BinaYonetimSistemi.Controller
             var sorgu = from kullaniciBorc in db.KullaniciBorc
                         where kullaniciBorc.Id == kullaniciBorcId
                         select kullaniciBorc;
-            
+
 
             var kullaniciBorcu = sorgu.FirstOrDefault();
             kullaniciBorcu.OdemeZamani = DateTime.Now.ToString();
             db.SaveChanges();
 
             Kasa kasa = new Kasa();
-            kasa.HareketEkle(kullaniciBorcu.Borc.FaturaTutari.ToString(),kullaniciBorcu.Borc.Id, GirisEkrani.user.Adres1.SiteBina,true);
+            kasa.HareketEkle(kullaniciBorcu.Borc.FaturaTutari.ToString(), kullaniciBorcu.Borc.Id, GirisEkrani.user.Adres1.SiteBina, true);
             kasa.KasaGecmisiKullaniciEkle(kullaniciBorcu.Borc.Id, kullaniciId);
 
         }
+
+        public List<KullaniciBorc> BorcluGetir()
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+            var sorgu = from borclu in db.KullaniciBorc
+                        where borclu.Kullanicilar.Adres1.SiteBina == GirisEkrani.user.Adres1.SiteBina & borclu.OdemeZamani == null
+                        select borclu;
+
+            return sorgu.ToList<KullaniciBorc>();
+        }
+
 
 
     }

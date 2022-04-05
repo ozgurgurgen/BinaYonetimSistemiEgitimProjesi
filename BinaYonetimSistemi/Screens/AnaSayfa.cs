@@ -67,5 +67,15 @@ namespace BinaYonetimSistemi.Screens
         {
             new AltEkranlar.KasaHareketleri().Show();
         }
+
+        private void AktifDuyuru_MouseClick(object sender, MouseEventArgs e)
+        {
+            new AltEkranlar.DuyuruListele().Show();
+        }
+
+        private void BorcOdemeyenler_MouseClick(object sender, MouseEventArgs e)
+        {
+            new AltEkranlar.BorcOdemeyenler().Show();
+        }
     }
 }

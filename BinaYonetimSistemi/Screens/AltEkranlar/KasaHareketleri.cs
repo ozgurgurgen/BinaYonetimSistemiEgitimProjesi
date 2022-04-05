@@ -39,12 +39,12 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
 
                 if (KasaHareketleriList.Rows[i].Cells[4].Value.ToString() == "False")
                 {
-                    style.BackColor = Color.Green;
+                    style.BackColor = Color.FromArgb(69, 128, 99);
                     style.ForeColor = Color.White;
                 }
                 else
                 {
-                    style.BackColor = Color.Red;
+                    style.BackColor = Color.FromArgb(245, 98, 98);
                     style.ForeColor = Color.White;
                 }
                 KasaHareketleriList.Rows[i].DefaultCellStyle = style;

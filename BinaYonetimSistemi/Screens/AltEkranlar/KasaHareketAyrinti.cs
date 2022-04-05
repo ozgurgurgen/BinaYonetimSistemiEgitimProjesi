@@ -50,7 +50,5 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             }
 
         }
-
-
     }
 }

@@ -24,8 +24,29 @@ namespace BinaYonetimSistemi.Controller
             db.SaveChanges();
 
             new Screens.AltEkranlar.Tamamlandi("Yeni Duyuru Ekleme İşlemi Başarıyla Tamamlandı").Show();
+        }
 
-            
+        public List<Duyurular> ListeGetir()
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+
+            var sorgu = from duyuruListesi in db.Duyurular
+                        where duyuruListesi.SiteBina == GirisEkrani.user.Adres1.SiteBina
+                        orderby duyuruListesi.DuyuruTarihi descending
+                        select duyuruListesi;
+
+            return sorgu.ToList<Duyurular>();
+        }
+
+        public Duyurular Getir(int duyuruId)
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+
+            var sorgu = from duyuru in db.Duyurular
+                        where duyuru.Id == duyuruId
+                        select duyuru;
+
+            return sorgu.FirstOrDefault();
         }
     }
 }

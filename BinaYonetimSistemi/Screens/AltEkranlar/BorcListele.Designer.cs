@@ -38,7 +38,8 @@
             // 
             // BorcListesi
             // 
-            this.BorcListesi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.BorcListesi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BorcListesi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BorcListesi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
@@ -62,7 +63,7 @@
             this.BorcListesi.DefaultCellStyle = dataGridViewCellStyle2;
             this.BorcListesi.Location = new System.Drawing.Point(12, 85);
             this.BorcListesi.Name = "BorcListesi";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 10F);
             dataGridViewCellStyle3.NullValue = "Ödenmedi";
             this.BorcListesi.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.BorcListesi.Size = new System.Drawing.Size(844, 353);

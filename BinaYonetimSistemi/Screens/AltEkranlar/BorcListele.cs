@@ -36,12 +36,12 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
 
             if (BorcListesi.Rows[e.RowIndex].Cells[7].Value != null)
             {
-                style.BackColor = Color.Green;
+                style.BackColor = Color.FromArgb(69, 128, 99);
                 style.ForeColor = Color.White;                
             }
             else
             {
-                style.BackColor = Color.Red;
+                style.BackColor = Color.FromArgb(245, 98, 98);
                 style.ForeColor = Color.White;
             }
             BorcListesi.Rows[e.RowIndex].DefaultCellStyle = style;

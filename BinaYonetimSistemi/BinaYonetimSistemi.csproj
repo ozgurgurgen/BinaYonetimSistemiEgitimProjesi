@@ -147,6 +147,24 @@
     <Compile Include="Screens\AltEkranlar\BorcListele.Designer.cs">
       <DependentUpon>BorcListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\AltEkranlar\BorcOdemeyenler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\BorcOdemeyenler.Designer.cs">
+      <DependentUpon>BorcOdemeyenler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruAyrinti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruAyrinti.Designer.cs">
+      <DependentUpon>DuyuruAyrinti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruListele.Designer.cs">
+      <DependentUpon>DuyuruListele.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\AltEkranlar\KasaHareketAyrinti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +224,15 @@
     <EmbeddedResource Include="Screens\AltEkranlar\BorcListele.resx">
       <DependentUpon>BorcListele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\BorcOdemeyenler.resx">
+      <DependentUpon>BorcOdemeyenler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\DuyuruAyrinti.resx">
+      <DependentUpon>DuyuruAyrinti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\DuyuruListele.resx">
+      <DependentUpon>DuyuruListele.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\KasaHareketAyrinti.resx">
       <DependentUpon>KasaHareketAyrinti.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +278,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BinaYonetimSistemi.Entities.Duyurular.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

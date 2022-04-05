@@ -33,7 +33,7 @@ namespace BinaYonetimSistemi.Controller
             var sorgu = from duyuru in db.Duyurular
                         where duyuru.SiteBina == GirisEkrani.user.Adres1.SiteBina1.Id
                         select duyuru;
-            return sorgu.Count();
+            return sorgu.ToList<Duyurular>().Count(x => Convert.ToDateTime(x.DuyuruBitisTarihi) >= DateTime.Now.Date);
         }
 
         public string KullaniciBorc()

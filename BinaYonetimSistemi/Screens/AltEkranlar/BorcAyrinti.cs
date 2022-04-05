@@ -25,6 +25,7 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             this.kullaniciBorcId = kullaniciBorcId;
 
             AyrintiSayfasiYapilandirma();
+
         }
 
         private void AyrintiSayfasiYapilandirma()
