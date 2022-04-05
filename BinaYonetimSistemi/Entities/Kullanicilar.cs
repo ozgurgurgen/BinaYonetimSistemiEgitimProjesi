@@ -17,6 +17,7 @@ namespace BinaYonetimSistemi.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kullanicilar()
         {
+            this.KasaGeçmişi = new HashSet<KasaGeçmişi>();
             this.KullaniciBorc = new HashSet<KullaniciBorc>();
         }
     
@@ -30,6 +31,8 @@ namespace BinaYonetimSistemi.Entities
         public string Yetki { get; set; }
     
         public virtual Adres Adres1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KasaGeçmişi> KasaGeçmişi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KullaniciBorc> KullaniciBorc { get; set; }
     }

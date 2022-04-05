@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BinaYonetimSistemi.Entities;
-using BinaYonetimSistemi.Classes;
+using BinaYonetimSistemi.Controller;
 
 namespace BinaYonetimSistemi.Screens.AltEkranlar
 {
@@ -18,43 +18,24 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         {
             InitializeComponent();
         }
-
+        
         private void GirisButon_Click(object sender, EventArgs e)
         {
-            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
-
-            Kullanicilar yeniKomsu = new Kullanicilar();
-
-            var sorgu = from adresim in db.Adres
-                        where adresim.Id == 2
-                        select adresim.SiteBina;
-            Adres adres = new Adres();
-
-            adres.SiteBina = sorgu.FirstOrDefault();
-            adres.BinaNo = BinaNoTextBox.Text;
-            adres.DaireNo = DaireNoTextBox.Text;
-            try
+            if (GirisEkrani.user.Yetki.Equals("Yonetici"))
             {
-                yeniKomsu.Adi = KomsuAdiTextBox.Text;
-                yeniKomsu.Soyadi = KomsuSoyadiTextBox.Text;
-                yeniKomsu.KullaniciAdi = KullaniciAdiTextBox.Text;
-                yeniKomsu.Parola = new Controller().ParolaDogrula(ParolaTextBox, ParolaDogrulamaTextBox);
-                yeniKomsu.Yetki = "Bina Sakini";
-                yeniKomsu.Adres1 = adres;
-                db.Kullanicilar.Add(yeniKomsu);
-                db.SaveChanges();
+                if ( new FormControl().TextBoxesAreEmpty(this) )
+                {
+                    new Komsu().Ekle(BinaNoTextBox.Text, DaireNoTextBox.Text, KomsuAdiTextBox.Text, KomsuSoyadiTextBox.Text,
+                    KullaniciAdiTextBox.Text, ParolaTextBox.Text, ParolaDogrulamaTextBox.Text, MailTextBox.Text);
 
+                    new FormControl().TexboxClear(this);
+                }
+                else
+                {
+                    HataLabel.Text = "Lütfen tüm alanların doldurulduğundan ve doğruluğundan emin olun!";
+                }
             }
-            catch (Exception exceptionss)
-            {
-
-                HataLabel.Text = "Tüm Alanları Yeniden Kontrol Edin. Geçersiz veya Eksik Giriş.";
-                Console.WriteLine("Hatam Bu: " + exceptionss.Message);
-            }
-            
-
-            
-
         }
+
     }
 }

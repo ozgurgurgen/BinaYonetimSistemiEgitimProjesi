@@ -18,6 +18,8 @@ namespace BinaYonetimSistemi
         public GirisEkrani()
         {
             InitializeComponent();
+            KullaniciAdiTextBox.Text = "ozgurgurgen";
+            ParolaTextBox.Text = "1234";
         }
 
         private void GirisButon_Click(object sender, EventArgs e)
@@ -46,5 +48,6 @@ namespace BinaYonetimSistemi
         {
             Application.Exit();
         }
+
     }
 }

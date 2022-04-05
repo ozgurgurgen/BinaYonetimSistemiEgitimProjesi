@@ -16,8 +16,7 @@ namespace BinaYonetimSistemi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new GirisEkrani());
-            Application.Run(new Screens.AltEkranlar.KomsuEkle());
+            Application.Run(new GirisEkrani());
         }
     }
 }

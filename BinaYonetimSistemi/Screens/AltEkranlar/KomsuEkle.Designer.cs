@@ -218,7 +218,7 @@
             // 
             // GirisButon
             // 
-            this.GirisButon.BackColor = System.Drawing.Color.SeaGreen;
+            this.GirisButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.GirisButon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GirisButon.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold);
             this.GirisButon.ForeColor = System.Drawing.Color.Snow;

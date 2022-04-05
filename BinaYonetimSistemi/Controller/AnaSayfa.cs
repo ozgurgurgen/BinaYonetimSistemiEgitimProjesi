@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using BinaYonetimSistemi.Entities;
 
-namespace BinaYonetimSistemi.Classes
+namespace BinaYonetimSistemi.Controller
 {
-    public class GenelGorunum
+    internal class AnaSayfa
     {
         BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
         public int Komsularim()
@@ -23,11 +23,11 @@ namespace BinaYonetimSistemi.Classes
         {
             var sorgu = from kasa in db.Kasa
                         where kasa.SiteBina1.Id == GirisEkrani.user.Adres1.SiteBina1.Id
-                        select kasa.KasaTutarı;
-
-            return sorgu.FirstOrDefault() + " ₺";
+                        select kasa;
+            var tutar = sorgu.FirstOrDefault().KasaTutarı;
+            return  tutar + " ₺";
         }
-        
+
         public int DuyuruSayisi()
         {
             var sorgu = from duyuru in db.Duyurular
@@ -38,13 +38,14 @@ namespace BinaYonetimSistemi.Classes
 
         public string KullaniciBorc()
         {
-            int toplamBorc = 0;
+            double toplamBorc = 0;
             var sorgu = from borc in db.KullaniciBorc
                         where borc.OdemeZamani == null && borc.KullaniciId == GirisEkrani.user.Id
                         select borc;
+
             foreach (var borc in sorgu.ToList())
-            {                
-                toplamBorc += Convert.ToInt32(borc.Borc.KisiBasinaDusenTutar);
+            {
+                toplamBorc += Convert.ToDouble(borc.Borc.FaturaTutari);
             }
             return toplamBorc.ToString() + " ₺";
         }

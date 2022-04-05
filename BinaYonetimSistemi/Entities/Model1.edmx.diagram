@@ -5,20 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a2ed3ac5aef143bf8d5f2f4d3a3e305c" Name="Diagram1" ZoomLevel="108">
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Adres" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Borc" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Duyurular" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Kasa" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.KasaGeçmişi" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.KullaniciBorc" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.SiteBina" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Adres_SiteBina" ManuallyRouted="false" />
-        <AssociationConnector Association="BinaYonetimSistemiModel.FK_KullaniciBorc_Borc" ManuallyRouted="false" />
-        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Duyurular_SiteBina" ManuallyRouted="false" />
-        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Kasa_SiteBina" ManuallyRouted="false" />
-        <AssociationConnector Association="BinaYonetimSistemiModel.FK_KasaGeçmişi_SiteBina" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Kullanicilar" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Adres" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Borc" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Duyurular" Width="1.5" PointX="3" PointY="11.25" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Kasa" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.KasaGeçmişi" Width="1.5" PointX="7.5" PointY="8.25" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.KullaniciBorc" Width="1.5" PointX="7.5" PointY="5.375" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Kullanicilar" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.SiteBina" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Adres_SiteBina" />
         <AssociationConnector Association="BinaYonetimSistemiModel.FK_Kullanicilar_Adres" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_KasaGeçmişi_Borc" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_KullaniciBorc_Borc" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Duyurular_SiteBina" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Kasa_SiteBina" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_KasaGeçmişi_Kullanicilar" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_KasaGeçmişi_SiteBina" />
         <AssociationConnector Association="BinaYonetimSistemiModel.FK_KullaniciBorc_Kullanicilar" />
       </Diagram>
     </edmx:Diagrams>

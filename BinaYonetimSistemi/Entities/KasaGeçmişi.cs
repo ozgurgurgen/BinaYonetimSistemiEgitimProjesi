@@ -15,12 +15,15 @@ namespace BinaYonetimSistemi.Entities
     public partial class KasaGeçmişi
     {
         public int Id { get; set; }
-        public string HareketTutarı { get; set; }
+        public Nullable<decimal> HareketTutarı { get; set; }
         public Nullable<int> BorcId { get; set; }
         public Nullable<int> SiteBinaId { get; set; }
-        public Nullable<bool> GelirMi { get; set; }
+        public bool GelirMi { get; set; }
+        public Nullable<int> KullaniciId { get; set; }
         public string HareketTarihi { get; set; }
     
+        public virtual Borc Borc { get; set; }
+        public virtual Kullanicilar Kullanicilar { get; set; }
         public virtual SiteBina SiteBina { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace BinaYonetimSistemi.Entities
         public virtual DbSet<Kasa> Kasa { get; set; }
         public virtual DbSet<KasaGeçmişi> KasaGeçmişi { get; set; }
         public virtual DbSet<KullaniciBorc> KullaniciBorc { get; set; }
-        public virtual DbSet<SiteBina> SiteBina { get; set; }
         public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
+        public virtual DbSet<SiteBina> SiteBina { get; set; }
     }
 }

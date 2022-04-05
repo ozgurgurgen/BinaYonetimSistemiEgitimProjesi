@@ -17,6 +17,7 @@ namespace BinaYonetimSistemi.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Borc()
         {
+            this.KasaGeçmişi = new HashSet<KasaGeçmişi>();
             this.KullaniciBorc = new HashSet<KullaniciBorc>();
         }
     
@@ -25,11 +26,14 @@ namespace BinaYonetimSistemi.Entities
         public string BorcAdi { get; set; }
         public string BorcAciklamasi { get; set; }
         public string BorcTarihi { get; set; }
+        public string FaturaTarihi { get; set; }
         public string FaturaNo { get; set; }
-        public string FaturaTutari { get; set; }
-        public string KisiBasinaDusenTutar { get; set; }
+        public decimal FaturaTutari { get; set; }
+        public decimal KisiBasinaDusenTutar { get; set; }
         public Nullable<bool> KasadanOdenecek { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KasaGeçmişi> KasaGeçmişi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KullaniciBorc> KullaniciBorc { get; set; }
     }

@@ -16,7 +16,7 @@ namespace BinaYonetimSistemi.Entities
     {
         public int Id { get; set; }
         public Nullable<int> SiteBina { get; set; }
-        public string KasaTutarı { get; set; }
+        public Nullable<decimal> KasaTutarı { get; set; }
     
         public virtual SiteBina SiteBina1 { get; set; }
     }
