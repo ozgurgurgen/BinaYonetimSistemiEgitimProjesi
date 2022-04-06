@@ -1,6 +1,6 @@
 ﻿namespace BinaYonetimSistemi.Screens.AltEkranlar
 {
-    partial class BorcOdemeyenler
+    partial class KomsuListesi
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
-            this.BorcluList = new System.Windows.Forms.DataGridView();
+            this.KomsuiList = new System.Windows.Forms.DataGridView();
             this.hareketId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daireSakini = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.binaDaire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.islemZamani = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucret = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.BorcluList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KomsuiList)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -46,23 +45,23 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(12, 11);
+            this.label5.Location = new System.Drawing.Point(12, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(369, 58);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Borç Ödemeyenler";
+            this.label5.Size = new System.Drawing.Size(253, 58);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Komşularım";
             // 
-            // BorcluList
+            // KomsuiList
             // 
-            this.BorcluList.AllowUserToAddRows = false;
-            this.BorcluList.AllowUserToDeleteRows = false;
-            this.BorcluList.AllowUserToOrderColumns = true;
-            this.BorcluList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.KomsuiList.AllowUserToAddRows = false;
+            this.KomsuiList.AllowUserToDeleteRows = false;
+            this.KomsuiList.AllowUserToOrderColumns = true;
+            this.KomsuiList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BorcluList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.BorcluList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.BorcluList.BackgroundColor = System.Drawing.Color.White;
+            this.KomsuiList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.KomsuiList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.KomsuiList.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
@@ -70,12 +69,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BorcluList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.BorcluList.ColumnHeadersHeight = 30;
-            this.BorcluList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.KomsuiList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.KomsuiList.ColumnHeadersHeight = 30;
+            this.KomsuiList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hareketId,
             this.daireSakini,
-            this.binaDaire,
             this.islemZamani,
             this.ucret});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -85,15 +83,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.BorcluList.DefaultCellStyle = dataGridViewCellStyle2;
-            this.BorcluList.Location = new System.Drawing.Point(12, 100);
-            this.BorcluList.Name = "BorcluList";
-            this.BorcluList.ReadOnly = true;
+            this.KomsuiList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.KomsuiList.Location = new System.Drawing.Point(22, 70);
+            this.KomsuiList.Name = "KomsuiList";
+            this.KomsuiList.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.BorcluList.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.BorcluList.Size = new System.Drawing.Size(776, 340);
-            this.BorcluList.TabIndex = 40;
-            this.BorcluList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorcluList_CellDoubleClick);
+            this.KomsuiList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.KomsuiList.Size = new System.Drawing.Size(976, 436);
+            this.KomsuiList.TabIndex = 34;
             // 
             // hareketId
             // 
@@ -108,46 +105,40 @@
             this.daireSakini.Name = "daireSakini";
             this.daireSakini.ReadOnly = true;
             // 
-            // binaDaire
-            // 
-            this.binaDaire.HeaderText = "Bina ve Daire No";
-            this.binaDaire.Name = "binaDaire";
-            this.binaDaire.ReadOnly = true;
-            // 
             // islemZamani
             // 
-            this.islemZamani.HeaderText = "Ödemediği Borç Adedi";
+            this.islemZamani.HeaderText = "Bina Daire No";
             this.islemZamani.Name = "islemZamani";
             this.islemZamani.ReadOnly = true;
             // 
             // ucret
             // 
-            this.ucret.HeaderText = "Toplam Borcu";
+            this.ucret.HeaderText = "Mail Adresi";
             this.ucret.Name = "ucret";
             this.ucret.ReadOnly = true;
             // 
-            // BorcOdemeyenler
+            // KomsuListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1010, 518);
+            this.Controls.Add(this.KomsuiList);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.BorcluList);
-            this.Name = "BorcOdemeyenler";
-            this.Text = "BorcOdemeyenler";
-            ((System.ComponentModel.ISupportInitialize)(this.BorcluList)).EndInit();
+            this.Name = "KomsuListesi";
+            this.Text = "KomsuListesi";
+            ((System.ComponentModel.ISupportInitialize)(this.KomsuiList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView BorcluList;
+        private System.Windows.Forms.DataGridView KomsuiList;
         private System.Windows.Forms.DataGridViewTextBoxColumn hareketId;
         private System.Windows.Forms.DataGridViewTextBoxColumn daireSakini;
-        private System.Windows.Forms.DataGridViewTextBoxColumn binaDaire;
         private System.Windows.Forms.DataGridViewTextBoxColumn islemZamani;
         private System.Windows.Forms.DataGridViewTextBoxColumn ucret;
     }

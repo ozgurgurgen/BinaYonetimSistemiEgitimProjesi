@@ -62,7 +62,7 @@
             this.BorcOdemeButon.TabIndex = 60;
             this.BorcOdemeButon.Text = "Borç Ödeme Yap";
             this.BorcOdemeButon.UseVisualStyleBackColor = false;
-            this.BorcOdemeButon.Click += new System.EventHandler(this.BorcOdemeButon_Click);
+            this.BorcOdemeButon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BorcOdemeButon_Click);
             // 
             // label8
             // 
@@ -234,9 +234,9 @@
             this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Location = new System.Drawing.Point(12, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(222, 58);
+            this.label5.Size = new System.Drawing.Size(278, 58);
             this.label5.TabIndex = 47;
-            this.label5.Text = "Borçlandır";
+            this.label5.Text = "Borç Ayrıntısı";
             // 
             // FaturaTarihiTextBox
             // 

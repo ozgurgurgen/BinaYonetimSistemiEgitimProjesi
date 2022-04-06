@@ -23,7 +23,7 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         {
             InitializeComponent();
             this.kullaniciBorcId = kullaniciBorcId;
-
+            Console.WriteLine("Gelen " + kullaniciBorcId);
             AyrintiSayfasiYapilandirma();
 
         }
@@ -46,10 +46,10 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             }
         }
 
-        private void BorcOdemeButon_Click(object sender, EventArgs e)
+        private void BorcOdemeButon_Click(object sender, MouseEventArgs e)
         {
             new Borclar().Ode(kullaniciBorcId, GirisEkrani.user.Id);
-
+            new Tamamlandi("Ödeme İşlemi Başarılı Şekilde Tamamlandı").Show();
         }
     }
 }

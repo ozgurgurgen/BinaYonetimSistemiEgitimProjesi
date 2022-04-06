@@ -147,6 +147,12 @@
     <Compile Include="Screens\AltEkranlar\BorcListele.Designer.cs">
       <DependentUpon>BorcListele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\AltEkranlar\BorcluAyrinti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\BorcluAyrinti.Designer.cs">
+      <DependentUpon>BorcluAyrinti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\AltEkranlar\BorcOdemeyenler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,12 @@
     </Compile>
     <Compile Include="Screens\AltEkranlar\KomsuEkle.Designer.cs">
       <DependentUpon>KomsuEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\KomsuListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\KomsuListesi.Designer.cs">
+      <DependentUpon>KomsuListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\AltEkranlar\Tamamlandi.cs">
       <SubType>Form</SubType>
@@ -224,6 +236,9 @@
     <EmbeddedResource Include="Screens\AltEkranlar\BorcListele.resx">
       <DependentUpon>BorcListele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\BorcluAyrinti.resx">
+      <DependentUpon>BorcluAyrinti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\BorcOdemeyenler.resx">
       <DependentUpon>BorcOdemeyenler.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\KomsuEkle.resx">
       <DependentUpon>KomsuEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\KomsuListesi.resx">
+      <DependentUpon>KomsuListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\Tamamlandi.resx">
       <DependentUpon>Tamamlandi.cs</DependentUpon>

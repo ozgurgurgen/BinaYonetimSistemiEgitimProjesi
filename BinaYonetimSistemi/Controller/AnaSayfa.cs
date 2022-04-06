@@ -16,7 +16,7 @@ namespace BinaYonetimSistemi.Controller
                         where komsularim.Adres1.SiteBina == GirisEkrani.user.Adres1.SiteBina
                         select komsularim;
 
-            return sorgu.Count();
+            return sorgu.Where(x => x.Id != GirisEkrani.user.Id).Count();
         }
 
         public string KasaTutari()
@@ -48,6 +48,15 @@ namespace BinaYonetimSistemi.Controller
                 toplamBorc += Convert.ToDouble(borc.Borc.FaturaTutari);
             }
             return toplamBorc.ToString() + " ₺";
+        }
+
+        public int BorcOdemeyenSayisi()
+        {
+            var sorgu = from kullanici in db.KullaniciBorc
+                        where kullanici.OdemeZamani == null & kullanici.Kullanicilar.Adres1.SiteBina == GirisEkrani.user.Adres1.SiteBina
+                        select kullanici;
+
+            return sorgu.GroupBy(x => x.KullaniciId).Count();
         }
     }
 }

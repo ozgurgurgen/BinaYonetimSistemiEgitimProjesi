@@ -83,7 +83,7 @@ namespace BinaYonetimSistemi.Controller
         {
             BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
 
-            var liste = db.KullaniciBorc.Where(x => x.KullaniciId == GirisEkrani.user.Id).Select(x => new
+            var liste = db.KullaniciBorc.Where(x => x.KullaniciId == GirisEkrani.user.Id).OrderByDescending((x => x.Borc.BorcTarihi)).Select(x => new
             {
                 x.Borc.FaturaNo,
                 x.Borc.BorcTuru,
@@ -138,16 +138,22 @@ namespace BinaYonetimSistemi.Controller
 
         }
 
-        public List<KullaniciBorc> BorcluGetir()
+        public List<BorcluKullanici> BorcluGetir()
         {
             BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
             var sorgu = from borclu in db.KullaniciBorc
                         where borclu.Kullanicilar.Adres1.SiteBina == GirisEkrani.user.Adres1.SiteBina & borclu.OdemeZamani == null
-                        select borclu;
+                        group borclu by borclu.KullaniciId into borcluKullanici
+                        select new BorcluKullanici { id = borcluKullanici.Key, borc = borcluKullanici.ToList<KullaniciBorc>() };
 
-            return sorgu.ToList<KullaniciBorc>();
+            return sorgu.ToList<BorcluKullanici>();
         }
 
+        public class BorcluKullanici
+        {
+            public int id { get; set; }
+            public List<KullaniciBorc> borc { get; set; }
+        }
 
 
     }

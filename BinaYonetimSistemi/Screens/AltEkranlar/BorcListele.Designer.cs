@@ -31,10 +31,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.BorcListesi = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.BorcListesi = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.BorcListesi)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.Silver;
+            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(312, 58);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Borçları Listele";
             // 
             // BorcListesi
             // 
@@ -71,17 +82,6 @@
             this.BorcListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorcListesi_CellDoubleClick);
             this.BorcListesi.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(12, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(312, 58);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Borçları Listele";
-            // 
             // BorcListele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,8 +99,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView BorcListesi;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView BorcListesi;
     }
 }

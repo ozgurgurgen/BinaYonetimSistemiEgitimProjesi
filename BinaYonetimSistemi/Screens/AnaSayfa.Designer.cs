@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.KomsularimLabel = new System.Windows.Forms.Panel();
             this.KomsuSayi = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.BorcOdemeyenler = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.BorcOdemeyenLAbel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.KomsularimLabel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.AktifDuyuru.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -89,7 +89,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.KomsularimLabel);
             this.flowLayoutPanel1.Controls.Add(this.panel3);
             this.flowLayoutPanel1.Controls.Add(this.AktifDuyuru);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
@@ -109,16 +109,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1207, 575);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
+            // KomsularimLabel
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.panel1.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.komsu;
-            this.panel1.Controls.Add(this.KomsuSayi);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(3, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 167);
-            this.panel1.TabIndex = 0;
+            this.KomsularimLabel.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.KomsularimLabel.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.komsu;
+            this.KomsularimLabel.Controls.Add(this.KomsuSayi);
+            this.KomsularimLabel.Controls.Add(this.label8);
+            this.KomsularimLabel.Location = new System.Drawing.Point(3, 58);
+            this.KomsularimLabel.Name = "KomsularimLabel";
+            this.KomsularimLabel.Size = new System.Drawing.Size(295, 167);
+            this.KomsularimLabel.TabIndex = 0;
+            this.KomsularimLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KomsularimLabel_MouseClick);
             // 
             // KomsuSayi
             // 
@@ -389,7 +390,7 @@
             this.BorcOdemeyenler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(86)))), ((int)(((byte)(117)))));
             this.BorcOdemeyenler.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.para;
             this.BorcOdemeyenler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BorcOdemeyenler.Controls.Add(this.label17);
+            this.BorcOdemeyenler.Controls.Add(this.BorcOdemeyenLAbel);
             this.BorcOdemeyenler.Controls.Add(this.label18);
             this.BorcOdemeyenler.Location = new System.Drawing.Point(304, 404);
             this.BorcOdemeyenler.Name = "BorcOdemeyenler";
@@ -397,20 +398,20 @@
             this.BorcOdemeyenler.TabIndex = 7;
             this.BorcOdemeyenler.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BorcOdemeyenler_MouseClick);
             // 
-            // label17
+            // BorcOdemeyenLAbel
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(3, 57);
-            this.label17.MaximumSize = new System.Drawing.Size(300, 58);
-            this.label17.MinimumSize = new System.Drawing.Size(290, 58);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(290, 58);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "0";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BorcOdemeyenLAbel.AutoSize = true;
+            this.BorcOdemeyenLAbel.BackColor = System.Drawing.Color.Transparent;
+            this.BorcOdemeyenLAbel.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BorcOdemeyenLAbel.ForeColor = System.Drawing.Color.White;
+            this.BorcOdemeyenLAbel.Location = new System.Drawing.Point(3, 57);
+            this.BorcOdemeyenLAbel.MaximumSize = new System.Drawing.Size(300, 58);
+            this.BorcOdemeyenLAbel.MinimumSize = new System.Drawing.Size(290, 58);
+            this.BorcOdemeyenLAbel.Name = "BorcOdemeyenLAbel";
+            this.BorcOdemeyenLAbel.Size = new System.Drawing.Size(290, 58);
+            this.BorcOdemeyenLAbel.TabIndex = 3;
+            this.BorcOdemeyenLAbel.Text = "0";
+            this.BorcOdemeyenLAbel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
@@ -571,8 +572,8 @@
             this.Text = "Bina Yönetim Sistemi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.KomsularimLabel.ResumeLayout(false);
+            this.KomsularimLabel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.AktifDuyuru.ResumeLayout(false);
@@ -607,7 +608,7 @@
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel KomsularimLabel;
         private System.Windows.Forms.Panel AktifDuyuru;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -637,7 +638,7 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel BorcOdemeyenler;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label BorcOdemeyenLAbel;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label20;

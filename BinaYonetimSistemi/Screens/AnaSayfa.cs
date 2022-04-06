@@ -60,6 +60,7 @@ namespace BinaYonetimSistemi.Screens
             KasaTutar.Text = anaSayfa.KasaTutari();
             DuyuruSayi.Text = anaSayfa.DuyuruSayisi().ToString();
             BorcTutar.Text = anaSayfa.KullaniciBorc();
+            BorcOdemeyenLAbel.Text = anaSayfa.BorcOdemeyenSayisi().ToString();
             KullaniciAdiText.Text = GirisEkrani.user.Adi;
         }
 
@@ -76,6 +77,11 @@ namespace BinaYonetimSistemi.Screens
         private void BorcOdemeyenler_MouseClick(object sender, MouseEventArgs e)
         {
             new AltEkranlar.BorcOdemeyenler().Show();
+        }
+
+        private void KomsularimLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            new AltEkranlar.KomsuListesi().Show();
         }
     }
 }
