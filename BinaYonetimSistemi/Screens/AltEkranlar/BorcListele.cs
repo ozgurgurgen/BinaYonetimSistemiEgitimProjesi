@@ -16,17 +16,16 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         public BorcListele()
         {
             InitializeComponent();
-            DataGridDoldur();
+            
         }
         private void DataGridDoldur()
         {
-            Borclar borclar = new Borclar();
-            BorcListesi.DataSource = borclar.Getir();
-
-            this.BorcListesi.Columns[2].Visible = false;
-            this.BorcListesi.Columns[3].Visible = false;
-            this.BorcListesi.Columns[5].Visible = false;
-            this.BorcListesi.Columns[8].Visible = false;
+            var borclar = new Borclar().Getir();
+            foreach (var borc in borclar)
+            {
+                BorcListesi.Rows.Add(borc.Id, borc.Borc.FaturaNo, borc.Borc.BorcTuru, 
+                    borc.Borc.FaturaTutari + "₺", borc.Borc.BorcTarihi, borc.OdemeZamani);
+            }
         }
 
         private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -34,7 +33,7 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             DataGridViewCellStyle style = new DataGridViewCellStyle();
 
 
-            if (BorcListesi.Rows[e.RowIndex].Cells[7].Value != null)
+            if (BorcListesi.Rows[e.RowIndex].Cells[5].Value != null)
             {
                 style.BackColor = Color.FromArgb(69, 128, 99);
                 style.ForeColor = Color.White;                
@@ -52,8 +51,14 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         {
             int rowIndex = e.RowIndex;
             DataGridViewRow row = BorcListesi.Rows[rowIndex];
-            new BorcAyrinti(int.Parse(row.Cells[8].Value.ToString())).Show();
+            new BorcAyrinti(int.Parse(row.Cells[0].Value.ToString())).Show();
 
+        }
+
+        private void BorcListele_Activated(object sender, EventArgs e)
+        {
+            BorcListesi.Rows.Clear();
+            DataGridDoldur();
         }
     }
 }

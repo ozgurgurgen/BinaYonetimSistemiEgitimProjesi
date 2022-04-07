@@ -8,7 +8,7 @@
     <ProjectGuid>{A3A84CBB-97E1-441D-A8A9-7E48B0D7BFB0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BinaYonetimSistemi</RootNamespace>
-    <AssemblyName>BinaYonetimSistemi</AssemblyName>
+    <AssemblyName>Bina Yönetim Sistemi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -49,6 +49,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -109,6 +113,9 @@
     <Compile Include="Entities\Adres.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Aidatlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Borc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -144,6 +151,13 @@
     </Compile>
     <Compile Include="Entities\SiteBina.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\BinaAidatBilgileri.cs" />
+    <Compile Include="Screens\AltEkranlar\BinaBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\BinaBilgileri.Designer.cs">
+      <DependentUpon>BinaBilgileri.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\AltEkranlar\BorcAyrinti.cs">
       <SubType>Form</SubType>
@@ -267,6 +281,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Screens\AltEkranlar\BinaBilgileri.resx">
+      <DependentUpon>BinaBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\BorcAyrinti.resx">
       <DependentUpon>BorcAyrinti.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +394,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="icon.ico" />
     <Content Include="Resources\kasa.png" />
     <None Include="Resources\para.png" />
     <None Include="Resources\satellite-dish.png" />

@@ -52,8 +52,7 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
 
 
         }
-
-        private void YenileButon_Click(object sender, EventArgs e)
+        private void BorcOdemeyenler_Activated(object sender, EventArgs e)
         {
             BorcluList.Rows.Clear();
             FormDoldur();

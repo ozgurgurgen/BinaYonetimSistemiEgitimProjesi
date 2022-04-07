@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KasaHareketAyrinti));
             this.FaturaTutariTextBox = new System.Windows.Forms.TextBox();
             this.FaturaTarihiTextBox = new System.Windows.Forms.TextBox();
             this.BorcButonu = new System.Windows.Forms.Button();
@@ -242,6 +243,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BorcTuruTextBox);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KasaHareketAyrinti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kasa Hareket Ayrıntısı";

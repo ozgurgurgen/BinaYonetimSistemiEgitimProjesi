@@ -16,7 +16,7 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         int kullaniciBorcId;
         public BorcAyrinti()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         public BorcAyrinti(int kullaniciBorcId)
@@ -36,7 +36,7 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             BorcTarihiTextBox.Text = kullaniciBorc.Borc.BorcTarihi.ToString();
             FaturaTarihiTextBox.Text = kullaniciBorc.Borc.FaturaTarihi.ToString();
             FaturaNumarasiTextBox.Text = kullaniciBorc.Borc.FaturaNo.ToString();
-            FaturaTutariTextBox.Text = kullaniciBorc.Borc.FaturaTutari.ToString();
+            FaturaTutariTextBox.Text = kullaniciBorc.Borc.FaturaTutari.ToString() + "₺";
             FaturaAciklamasiTextBox.Text = kullaniciBorc.Borc.BorcAciklamasi.ToString();
 
             if (kullaniciBorc.OdemeZamani != null)

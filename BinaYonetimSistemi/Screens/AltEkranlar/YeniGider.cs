@@ -25,8 +25,8 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             if (formControl.TextBoxesAreEmpty(this))
             {
                 var komsuSayisi = new Komsu().KomsuSayisi();
-                new Borclar().Ekle(BorcTuruTextBox.Text, BorcAdiTextBox.Text, FaturaTarihi.Value.ToShortDateString(),
-                        FaturaTutariTextBox.Text, FaturaNoTextBox.Text, DBDusenTutarTextBox.Text, true, FaturaAciklamasiTextBox.Text, komsuSayisi);
+                new Borclar().Eklem(BorcTuruTextBox.Text, BorcAdiTextBox.Text, FaturaTarihi.Value.ToShortDateString(),
+                        FaturaTutariTextBox.Text, FaturaNoTextBox.Text,  true, FaturaAciklamasiTextBox.Text);
                 Console.WriteLine(new Komsu().KomsuSayisi());
             }
             formControl.TexboxClear(this);

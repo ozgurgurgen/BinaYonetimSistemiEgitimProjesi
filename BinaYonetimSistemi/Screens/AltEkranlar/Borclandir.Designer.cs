@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Borclandir));
             this.BorclandirButon = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.FaturaTarihi = new System.Windows.Forms.DateTimePicker();
             this.DaireSeçim = new System.Windows.Forms.ComboBox();
+            this.UyariLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BorclandirButon
@@ -107,7 +109,7 @@
             // 
             // FaturaAciklamasiTextBox
             // 
-            this.FaturaAciklamasiTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
+            this.FaturaAciklamasiTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.FaturaAciklamasiTextBox.Location = new System.Drawing.Point(42, 290);
             this.FaturaAciklamasiTextBox.Name = "FaturaAciklamasiTextBox";
             this.FaturaAciklamasiTextBox.Size = new System.Drawing.Size(504, 94);
@@ -218,12 +220,23 @@
             this.DaireSeçim.Size = new System.Drawing.Size(233, 27);
             this.DaireSeçim.TabIndex = 45;
             // 
+            // UyariLabel
+            // 
+            this.UyariLabel.AutoSize = true;
+            this.UyariLabel.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
+            this.UyariLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.UyariLabel.Location = new System.Drawing.Point(42, 81);
+            this.UyariLabel.Name = "UyariLabel";
+            this.UyariLabel.Size = new System.Drawing.Size(0, 19);
+            this.UyariLabel.TabIndex = 46;
+            // 
             // Borclandir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(588, 553);
+            this.Controls.Add(this.UyariLabel);
             this.Controls.Add(this.DaireSeçim);
             this.Controls.Add(this.BorclandirButon);
             this.Controls.Add(this.label8);
@@ -240,6 +253,7 @@
             this.Controls.Add(this.BorcTuruTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FaturaTarihi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Borclandir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borçlandır";
@@ -266,5 +280,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker FaturaTarihi;
         private System.Windows.Forms.ComboBox DaireSeçim;
+        private System.Windows.Forms.Label UyariLabel;
     }
 }

@@ -34,26 +34,29 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
 
         private void BorclandirButon_Click(object sender, EventArgs e)
         {
+            int daireSecimIndex = DaireSeçim.SelectedIndex;
             FormControl formControl = new FormControl();
             FormControl.ComboBoxItem daireSecimi = DaireSeçim.SelectedItem as FormControl.ComboBoxItem;
-            if (formControl.TextBoxesAreEmpty(this))
+            int kullaniciId = (int)daireSecimi.Value;
+            decimal faturaTutari = Convert.ToDecimal(FaturaTutariTextBox.Text.Remove(0, 1));
+
+            if (formControl.TextBoxesAreEmpty(this) & daireSecimIndex != -1)
             {
                 new Borclar().Ekle(BorcTuruTextBox.Text, BorcAdiTextBox.Text, FaturaTarihi.Value.ToShortDateString(),
-                FaturaTutariTextBox.Text, FaturaNoTextBox.Text, false, FaturaAciklamasiTextBox.Text, daireSecimi);
+                faturaTutari, FaturaNoTextBox.Text, false, FaturaAciklamasiTextBox.Text, kullaniciId);
+            }
+            if (daireSecimIndex == -1)
+            {
+                UyariLabel.Text = "* Daire seçimi yapmadınız!";
             }
             formControl.TexboxClear(this);
- 
+
         }
 
         private void FaturaTutariTextBox_Leave(object sender, EventArgs e)
         {
-            Double value;
-            if (Double.TryParse(FaturaTutariTextBox.Text, out value))
-                FaturaTutariTextBox.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", value);
-            else
-                FaturaTutariTextBox.Text = String.Empty;
+            new FormControl().ParaBirimi(FaturaTutariTextBox);
         }
-        
 
     }
 

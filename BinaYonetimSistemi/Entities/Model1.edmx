@@ -14,6 +14,16 @@
           <Property Name="BinaNo" Type="nvarchar" MaxLength="6" />
           <Property Name="DaireNo" Type="nvarchar" MaxLength="3" />
         </EntityType>
+        <EntityType Name="Aidatlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AidatTutari" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AidatGunu" Type="int" Nullable="false" />
+          <Property Name="SiteBinaId" Type="int" Nullable="false" />
+          <Property Name="AidatlarGonderildi" Type="bit" />
+        </EntityType>
         <EntityType Name="Borc">
           <Key>
             <PropertyRef Name="Id" />
@@ -102,6 +112,18 @@
             </Principal>
             <Dependent Role="Adres">
               <PropertyRef Name="SiteBina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aidatlar_SiteBina">
+          <End Role="SiteBina" Type="Self.SiteBina" Multiplicity="1" />
+          <End Role="Aidatlar" Type="Self.Aidatlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aidatlar">
+              <PropertyRef Name="SiteBinaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -203,6 +225,7 @@
         </Association>
         <EntityContainer Name="BinaYonetimSistemiModelStoreContainer">
           <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Aidatlar" EntityType="Self.Aidatlar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Borc" EntityType="Self.Borc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Duyurular" EntityType="Self.Duyurular" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kasa" EntityType="Self.Kasa" Schema="dbo" store:Type="Tables" />
@@ -213,6 +236,10 @@
           <AssociationSet Name="FK_Adres_SiteBina" Association="Self.FK_Adres_SiteBina">
             <End Role="SiteBina" EntitySet="SiteBina" />
             <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aidatlar_SiteBina" Association="Self.FK_Aidatlar_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Aidatlar" EntitySet="Aidatlar" />
           </AssociationSet>
           <AssociationSet Name="FK_Duyurular_SiteBina" Association="Self.FK_Duyurular_SiteBina">
             <End Role="SiteBina" EntitySet="SiteBina" />
@@ -296,7 +323,12 @@
             <End Role="Kullanicilar" EntitySet="Kullanicilar" />
             <End Role="KullaniciBorc" EntitySet="KullaniciBorc" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="Aidatlar" EntityType="BinaYonetimSistemiModel.Aidatlar" />
+          <AssociationSet Name="FK_Aidatlar_SiteBina" Association="BinaYonetimSistemiModel.FK_Aidatlar_SiteBina">
+            <End Role="SiteBina" EntitySet="SiteBina" />
+            <End Role="Aidatlar" EntitySet="Aidatlar" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="Adres">
           <Key>
             <PropertyRef Name="Id" />
@@ -402,6 +434,7 @@
           <NavigationProperty Name="Duyurular" Relationship="BinaYonetimSistemiModel.FK_Duyurular_SiteBina" FromRole="SiteBina" ToRole="Duyurular" />
           <NavigationProperty Name="Kasa" Relationship="BinaYonetimSistemiModel.FK_Kasa_SiteBina" FromRole="SiteBina" ToRole="Kasa" />
           <NavigationProperty Name="KasaGeçmişi" Relationship="BinaYonetimSistemiModel.FK_KasaGeçmişi_SiteBina" FromRole="SiteBina" ToRole="KasaGeçmişi" />
+          <NavigationProperty Name="Aidatlar" Relationship="BinaYonetimSistemiModel.FK_Aidatlar_SiteBina" FromRole="SiteBina" ToRole="Aidatlar" />
         </EntityType>
         <Association Name="FK_Adres_SiteBina">
           <End Type="BinaYonetimSistemiModel.SiteBina" Role="SiteBina" Multiplicity="1" />
@@ -511,6 +544,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Aidatlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AidatTutari" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="AidatGunu" Type="Int32" Nullable="false" />
+          <Property Name="SiteBinaId" Type="Int32" Nullable="false" />
+          <Property Name="AidatlarGonderildi" Type="Boolean" />
+          <NavigationProperty Name="SiteBina" Relationship="BinaYonetimSistemiModel.FK_Aidatlar_SiteBina" FromRole="Aidatlar" ToRole="SiteBina" />
+        </EntityType>
+        <Association Name="FK_Aidatlar_SiteBina">
+          <End Type="BinaYonetimSistemiModel.SiteBina" Role="SiteBina" Multiplicity="1" />
+          <End Type="BinaYonetimSistemiModel.Aidatlar" Role="Aidatlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SiteBina">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aidatlar">
+              <PropertyRef Name="SiteBinaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -609,6 +665,17 @@
                 <ScalarProperty Name="Mahalle" ColumnName="Mahalle" />
                 <ScalarProperty Name="Ilce" ColumnName="Ilce" />
                 <ScalarProperty Name="Il" ColumnName="Il" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aidatlar">
+            <EntityTypeMapping TypeName="BinaYonetimSistemiModel.Aidatlar">
+              <MappingFragment StoreEntitySet="Aidatlar">
+                <ScalarProperty Name="AidatlarGonderildi" ColumnName="AidatlarGonderildi" />
+                <ScalarProperty Name="SiteBinaId" ColumnName="SiteBinaId" />
+                <ScalarProperty Name="AidatGunu" ColumnName="AidatGunu" />
+                <ScalarProperty Name="AidatTutari" ColumnName="AidatTutari" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

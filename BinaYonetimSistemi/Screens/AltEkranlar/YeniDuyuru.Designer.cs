@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YeniDuyuru));
             this.DuyuruBaslangic = new System.Windows.Forms.DateTimePicker();
             this.DuyuruBitis = new System.Windows.Forms.DateTimePicker();
             this.DuyuruMetniRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -134,7 +135,7 @@
             // 
             // DuyuruOlusturButon
             // 
-            this.DuyuruOlusturButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.DuyuruOlusturButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(128)))), ((int)(((byte)(99)))));
             this.DuyuruOlusturButon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DuyuruOlusturButon.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold);
             this.DuyuruOlusturButon.ForeColor = System.Drawing.Color.Snow;
@@ -163,6 +164,7 @@
             this.Controls.Add(this.DuyuruMetniRichTextBox);
             this.Controls.Add(this.DuyuruBitis);
             this.Controls.Add(this.DuyuruBaslangic);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "YeniDuyuru";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Duyuru";

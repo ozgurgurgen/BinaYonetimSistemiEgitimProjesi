@@ -33,5 +33,6 @@ namespace BinaYonetimSistemi.Entities
         public virtual DbSet<KullaniciBorc> KullaniciBorc { get; set; }
         public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
         public virtual DbSet<SiteBina> SiteBina { get; set; }
+        public virtual DbSet<Aidatlar> Aidatlar { get; set; }
     }
 }

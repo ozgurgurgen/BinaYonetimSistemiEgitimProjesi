@@ -21,6 +21,7 @@ namespace BinaYonetimSistemi.Entities
             this.Duyurular = new HashSet<Duyurular>();
             this.Kasa = new HashSet<Kasa>();
             this.KasaGeçmişi = new HashSet<KasaGeçmişi>();
+            this.Aidatlar = new HashSet<Aidatlar>();
         }
     
         public int Id { get; set; }
@@ -38,5 +39,7 @@ namespace BinaYonetimSistemi.Entities
         public virtual ICollection<Kasa> Kasa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KasaGeçmişi> KasaGeçmişi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Aidatlar> Aidatlar { get; set; }
     }
 }

@@ -49,6 +49,14 @@ namespace BinaYonetimSistemi.Controller
 
 
         }
+        public void ParaBirimi(TextBox textBox)
+        {
+            Double value;
+            if (Double.TryParse(textBox.Text, out value))
+                textBox.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", value);
+            else
+                textBox.Text = String.Empty;
+        }
         public class ComboBoxItem
         {
             public string Text { get; set; }

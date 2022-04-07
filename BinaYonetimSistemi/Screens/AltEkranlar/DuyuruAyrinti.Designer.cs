@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DuyuruAyrinti));
             this.label6 = new System.Windows.Forms.Label();
             this.DuyuruMetniTextBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -174,6 +175,7 @@
             this.Controls.Add(this.DuyuruMetniTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "DuyuruAyrinti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

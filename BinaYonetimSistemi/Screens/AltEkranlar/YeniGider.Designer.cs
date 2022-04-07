@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YeniGider));
             this.label1 = new System.Windows.Forms.Label();
             this.BorcTuruTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -206,7 +207,7 @@
             // 
             // GiderEkleButon
             // 
-            this.GiderEkleButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(151)))));
+            this.GiderEkleButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(128)))), ((int)(((byte)(99)))));
             this.GiderEkleButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.GiderEkleButon.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold);
             this.GiderEkleButon.ForeColor = System.Drawing.Color.White;
@@ -241,6 +242,7 @@
             this.Controls.Add(this.BorcTuruTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FaturaTarihi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "YeniGider";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yeni Gider";

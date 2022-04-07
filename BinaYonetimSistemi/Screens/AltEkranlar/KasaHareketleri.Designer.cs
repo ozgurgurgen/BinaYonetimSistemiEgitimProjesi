@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KasaHareketleri));
             this.label5 = new System.Windows.Forms.Label();
             this.KasaHareketleriList = new System.Windows.Forms.DataGridView();
             this.hareketId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,6 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.KasaHareketleriList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "KasaHareketleri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

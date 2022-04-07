@@ -9,8 +9,9 @@ namespace BinaYonetimSistemi.Controller
 {
     internal class Borclar
     {
-        public void Ekle(string borcTuru, string borcAdi, string faturaTarihi, string faturaTutari, string faturaNo,
-            string daireBasiDusenTutar, bool kasadanOdenecek, string borcAciklamasi, int komsuSayisi)
+        //Genel gider ekle
+        public void Eklem(string borcTuru, string borcAdi, string faturaTarihi, string faturaTutari, string faturaNo,
+            bool kasadanOdenecek, string borcAciklamasi)
         {
             BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
 
@@ -21,7 +22,6 @@ namespace BinaYonetimSistemi.Controller
             yeniBorc.FaturaTarihi = faturaTarihi;
             yeniBorc.FaturaTutari = Convert.ToDecimal(faturaTutari.Remove(0, 1));
             yeniBorc.FaturaNo = faturaNo;
-            yeniBorc.KisiBasinaDusenTutar = Convert.ToDecimal(daireBasiDusenTutar.Remove(0, 1));
             yeniBorc.KasadanOdenecek = kasadanOdenecek;
             yeniBorc.BorcAciklamasi = borcAciklamasi;
             yeniBorc.BorcTarihi = DateTime.Now.ToString();
@@ -37,29 +37,28 @@ namespace BinaYonetimSistemi.Controller
             new Kasa().HareketEkle(faturaTutari, borc.Id, GirisEkrani.user.Adres1.SiteBina, false);
         }
 
-        public void Ekle(string borcTuru, string borcAdi, string faturaTarihi, string faturaTutari, string faturaNo,
-            bool kasadanOdenecek, string borcAciklamasi, FormControl.ComboBoxItem daireSeçimi)
+        //Kişi borçlandır        
+        public void Ekle(string borcTuru, string borcAdi, string faturaTarihi, decimal faturaTutari, string faturaNo,
+            bool kasadanOdenecek, string borcAciklamasi, int kullaniciId)
         {
-            int kullaniciId = (int)daireSeçimi.Value;
-
             BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
-            Borc yeniBorc = new Borc();                     
+            Borc yeniBorc = new Borc();
 
             var sorgu = from kullanici in db.Kullanicilar
                         where kullanici.Id == kullaniciId & kullanici.Adres1.SiteBina1.Id == GirisEkrani.user.Adres1.SiteBina1.Id
-                        select kullanici;           
+                        select kullanici;
 
             yeniBorc.BorcTuru = borcTuru;
             yeniBorc.BorcAdi = borcAdi;
             yeniBorc.FaturaTarihi = faturaTarihi;
-            yeniBorc.FaturaTutari = Convert.ToDecimal(faturaTutari.Remove(0, 1));
+            yeniBorc.FaturaTutari = faturaTutari;
             yeniBorc.FaturaNo = faturaNo;
             yeniBorc.KasadanOdenecek = kasadanOdenecek;
             yeniBorc.BorcAciklamasi = borcAciklamasi;
-            yeniBorc.KisiBasinaDusenTutar = 0;
             yeniBorc.BorcTarihi = DateTime.Now.ToString();
 
             db.Borc.Add(yeniBorc);
+            Console.WriteLine(yeniBorc.FaturaTutari);
             db.SaveChanges();
 
             BinaYonetimSistemiEntities dbx = new BinaYonetimSistemiEntities();
@@ -76,24 +75,11 @@ namespace BinaYonetimSistemi.Controller
             dbx.SaveChanges();
         }
 
-        public Array Getir()
+        public List<KullaniciBorc> Getir()
         {
             BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
 
-            var liste = db.KullaniciBorc.Where(x => x.KullaniciId == GirisEkrani.user.Id).OrderByDescending((x => x.Borc.BorcTarihi)).Select(x => new
-            {
-                x.Borc.FaturaNo,
-                x.Borc.BorcTuru,
-                x.Borc.BorcAdi,
-                x.Borc.BorcAciklamasi,
-                x.Borc.FaturaTutari,
-                x.Borc.FaturaTarihi,
-                x.Borc.BorcTarihi,
-                x.OdemeZamani,
-                x.Id
-            }).ToArray();
-
-
+            var liste = db.KullaniciBorc.Where(x => x.KullaniciId == GirisEkrani.user.Id).OrderByDescending((x => x.Borc.BorcTarihi)).ToList<KullaniciBorc>();
             return liste;
         }
 
@@ -163,8 +149,55 @@ namespace BinaYonetimSistemi.Controller
             Borc borc = sorgu.FirstOrDefault().Borc;
             db.Borc.Remove(borc);
             db.KullaniciBorc.Remove(sorgu.FirstOrDefault());
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                Console.WriteLine("Bunu Silemezsin");
 
+            }
+
+        }
+
+        public void AidatBorclandir()
+        {
+            var buGun = DateTime.Now.Day;
+            var buAy = DateTime.Now.ToString("MMMM");
+            var faturaNo = AidatFaturaNoYapıcı();
+
+            BinaYonetimSistemiEntities dbm = new BinaYonetimSistemiEntities();
+
+            var sorgu = from _aidat in dbm.Aidatlar
+                        where _aidat.SiteBinaId == GirisEkrani.user.Adres1.SiteBina
+                        select _aidat;
+            var aidat = sorgu.FirstOrDefault();
+
+            if (sorgu.Count() != 0)
+            {
+                var aidatGunu = aidat.AidatGunu;
+                if (buGun == aidatGunu & aidat.AidatlarGonderildi == false)
+                {
+                    var komsuListesi = new Komsu().KomsulariGetir();
+                    aidat.AidatlarGonderildi = true;
+                    dbm.SaveChanges();
+                    foreach (var komsu in komsuListesi)
+                    {
+                        Ekle("Aidat", buAy + " Ayı Aidat Ödemesi", DateTime.Now.ToShortDateString(), aidat.AidatTutari, "ADT" + faturaNo,
+                            false, "Aidatınızı zamanında ödediğiniz için teşekkür ederiz.", komsu.Id);
+
+                        faturaNo++;
+                    }
+
+                }
+            }
+        }
+
+        private int AidatFaturaNoYapıcı()
+        {
+            var tarih = DateTime.Now.ToShortDateString().Replace(".", "") + DateTime.Now.Minute;
+            return int.Parse(tarih);
         }
 
     }

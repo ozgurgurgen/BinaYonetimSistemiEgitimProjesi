@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DuyuruAyrintiDuzenle));
             this.label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -163,7 +164,7 @@
             // DeğikilikKaydetButon
             // 
             this.DeğikilikKaydetButon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeğikilikKaydetButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.DeğikilikKaydetButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(128)))), ((int)(((byte)(99)))));
             this.DeğikilikKaydetButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DeğikilikKaydetButon.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.DeğikilikKaydetButon.ForeColor = System.Drawing.Color.White;
@@ -194,6 +195,7 @@
             this.Controls.Add(this.DuyuruMetniTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DuyuruAyrintiDuzenle";
             this.Text = "Duyuru Ayrıntı Düzenle";
             this.ResumeLayout(false);

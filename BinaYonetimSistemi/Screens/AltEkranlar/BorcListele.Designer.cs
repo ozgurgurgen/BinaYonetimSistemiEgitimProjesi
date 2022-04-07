@@ -31,8 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorcListele));
             this.label5 = new System.Windows.Forms.Label();
             this.BorcListesi = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faturaNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borcTuru = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faturaTutari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borcTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.odemeZamani = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.BorcListesi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +56,8 @@
             // 
             // BorcListesi
             // 
+            this.BorcListesi.AllowUserToAddRows = false;
+            this.BorcListesi.AllowUserToOrderColumns = true;
             this.BorcListesi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -64,6 +73,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.BorcListesi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.BorcListesi.ColumnHeadersHeight = 30;
+            this.BorcListesi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.faturaNo,
+            this.borcTuru,
+            this.faturaTutari,
+            this.borcTarihi,
+            this.odemeZamani});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -74,6 +90,7 @@
             this.BorcListesi.DefaultCellStyle = dataGridViewCellStyle2;
             this.BorcListesi.Location = new System.Drawing.Point(12, 85);
             this.BorcListesi.Name = "BorcListesi";
+            this.BorcListesi.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 10F);
             dataGridViewCellStyle3.NullValue = "Ödenmedi";
             this.BorcListesi.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -81,6 +98,43 @@
             this.BorcListesi.TabIndex = 0;
             this.BorcListesi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorcListesi_CellDoubleClick);
             this.BorcListesi.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // faturaNo
+            // 
+            this.faturaNo.HeaderText = "Fatura No";
+            this.faturaNo.Name = "faturaNo";
+            this.faturaNo.ReadOnly = true;
+            // 
+            // borcTuru
+            // 
+            this.borcTuru.HeaderText = "Borç Türü";
+            this.borcTuru.Name = "borcTuru";
+            this.borcTuru.ReadOnly = true;
+            // 
+            // faturaTutari
+            // 
+            this.faturaTutari.HeaderText = "Fatura Tutarı";
+            this.faturaTutari.Name = "faturaTutari";
+            this.faturaTutari.ReadOnly = true;
+            // 
+            // borcTarihi
+            // 
+            this.borcTarihi.HeaderText = "Borç Tarihi";
+            this.borcTarihi.Name = "borcTarihi";
+            this.borcTarihi.ReadOnly = true;
+            // 
+            // odemeZamani
+            // 
+            this.odemeZamani.HeaderText = "Ödeme Zamanı";
+            this.odemeZamani.Name = "odemeZamani";
+            this.odemeZamani.ReadOnly = true;
             // 
             // BorcListele
             // 
@@ -90,9 +144,11 @@
             this.ClientSize = new System.Drawing.Size(868, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BorcListesi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BorcListele";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borçları Listele";
+            this.Activated += new System.EventHandler(this.BorcListele_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.BorcListesi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,5 +158,11 @@
         #endregion
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView BorcListesi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faturaNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borcTuru;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faturaTutari;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borcTarihi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn odemeZamani;
     }
 }

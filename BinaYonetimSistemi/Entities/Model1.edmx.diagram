@@ -22,7 +22,9 @@
         <AssociationConnector Association="BinaYonetimSistemiModel.FK_KasaGeçmişi_Kullanicilar" />
         <AssociationConnector Association="BinaYonetimSistemiModel.FK_KasaGeçmişi_SiteBina" />
         <AssociationConnector Association="BinaYonetimSistemiModel.FK_KullaniciBorc_Kullanicilar" />
-      </Diagram>
+        <EntityTypeShape EntityType="BinaYonetimSistemiModel.Aidatlar" Width="1.5" PointX="3" PointY="2.25" />
+        <AssociationConnector Association="BinaYonetimSistemiModel.FK_Aidatlar_SiteBina" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

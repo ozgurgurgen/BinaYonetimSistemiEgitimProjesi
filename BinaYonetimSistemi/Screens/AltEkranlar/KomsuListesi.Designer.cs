@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KomsuListesi));
             this.label5 = new System.Windows.Forms.Label();
             this.KomsuiList = new System.Windows.Forms.DataGridView();
             this.hareketId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,6 +126,7 @@
             this.ClientSize = new System.Drawing.Size(839, 496);
             this.Controls.Add(this.KomsuiList);
             this.Controls.Add(this.label5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KomsuListesi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Komşu Listesi";
