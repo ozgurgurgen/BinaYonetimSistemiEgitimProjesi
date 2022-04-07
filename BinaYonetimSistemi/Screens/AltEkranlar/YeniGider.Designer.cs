@@ -242,7 +242,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FaturaTarihi);
             this.Name = "YeniGider";
-            this.Text = "YeniGider";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Yeni Gider";
             this.ResumeLayout(false);
             this.PerformLayout();
 

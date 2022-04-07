@@ -48,5 +48,35 @@ namespace BinaYonetimSistemi.Controller
 
             return sorgu.FirstOrDefault();
         }
+        public void Sil(int duyuruId)
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+
+            var sorgu = from duyuru in db.Duyurular
+                        where duyuru.Id == duyuruId
+                        select duyuru;
+
+            db.Duyurular.Remove(sorgu.FirstOrDefault());
+
+            db.SaveChanges();
+        }
+        public void Guncelle(int duyuruId, string duyuruBasligi, string duyuruMetni, string baslangic, string bitis)
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+
+            var sorgu = from duyuru in db.Duyurular
+                        where duyuru.Id == duyuruId
+                        select duyuru;
+
+            Duyurular guncelDuyuru = sorgu.FirstOrDefault();
+;
+            guncelDuyuru.DuyuruBasligi = duyuruBasligi;
+            guncelDuyuru.DuyuruAciklamasi = duyuruMetni;
+            guncelDuyuru.DuyuruTarihi = baslangic;
+            guncelDuyuru.DuyuruBitisTarihi = bitis;
+            db.SaveChanges();
+
+
+        }
     }
 }

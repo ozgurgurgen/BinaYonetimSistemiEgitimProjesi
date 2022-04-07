@@ -83,5 +83,15 @@ namespace BinaYonetimSistemi.Screens
         {
             new AltEkranlar.KomsuListesi().Show();
         }
+
+        private void KomsuDuzenle_MouseClick(object sender, MouseEventArgs e)
+        {
+            new AltEkranlar.KomsuDuzenlemeListesi().Show();
+        }
+
+        private void DuyuruDuzenle_MouseClick(object sender, MouseEventArgs e)
+        {
+            new AltEkranlar.DuyuruDuzenle().Show();
+        }
     }
 }

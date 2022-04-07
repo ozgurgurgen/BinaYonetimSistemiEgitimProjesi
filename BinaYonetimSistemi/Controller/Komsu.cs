@@ -34,10 +34,10 @@ namespace BinaYonetimSistemi.Controller
 
         public int KomsuSayisi()
         {
-            return KomsuGetir().Count();
+            return KomsulariGetir().Count();
         }
 
-        public List<Kullanicilar> KomsuGetir()
+        public List<Kullanicilar> KomsulariGetir()
         {
             BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
             var sorgu = from komsu in db.Kullanicilar
@@ -46,6 +46,31 @@ namespace BinaYonetimSistemi.Controller
             var list = new List<Kullanicilar>();
             list = sorgu.ToList();
             return list;
+        }
+        public Kullanicilar KomsumGetir(int kullaniciId)
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+            var sorgu = from komsu in db.Kullanicilar
+                        where komsu.Id == kullaniciId
+                        select komsu;
+            return sorgu.FirstOrDefault();
+        }
+        public void KomsuGuncelle(int komsuId, string binaNo, string daireNo, string ad, string soyad, string kullaniciAdi, string parola, string mail)
+        {
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+            var sorgu = from komsu in db.Kullanicilar
+                        where komsu.Id == komsuId
+                        select komsu;
+            var komsum = sorgu.FirstOrDefault();
+            komsum.Adres1.BinaNo = binaNo.Trim();
+            komsum.Adres1.DaireNo = daireNo.Trim();
+            komsum.Adi = ad.Trim();
+            komsum.Soyadi = soyad.Trim();
+            komsum.KullaniciAdi = kullaniciAdi.Trim();
+            komsum.Mail = mail.Trim();
+
+            db.SaveChanges();
+            
         }
     }
 }

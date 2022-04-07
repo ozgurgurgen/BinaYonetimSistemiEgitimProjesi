@@ -176,7 +176,8 @@
             this.Controls.Add(this.label5);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "DuyuruAyrinti";
-            this.Text = "DuyuruAyrinti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Duyuru Ayrıntısı";
             this.ResumeLayout(false);
             this.PerformLayout();
 

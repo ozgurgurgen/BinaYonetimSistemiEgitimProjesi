@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace BinaYonetimSistemi.Screens.AltEkranlar
 {
-    public partial class KomsuListesi : Form
+    public partial class KomsuDuzenlemeListesi : Form
     {
-        public KomsuListesi()
+        public KomsuDuzenlemeListesi()
         {
             InitializeComponent();
             ListeDoldur();
         }
-
         private void ListeDoldur()
         {
             var list = new Komsu().KomsulariGetir().Where(x => x.Id != GirisEkrani.user.Id);
@@ -27,6 +26,11 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             {
                 KomsuiList.Rows.Add(item.Id, item.Adi + " " + item.Soyadi, item.Adres1.BinaNo + "/" + item.Adres1.DaireNo, item.Mail);
             }
+        }
+
+        private void KomsuiList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new KomsuDüzenle((int)KomsuiList.Rows[e.RowIndex].Cells[0].Value).Show();
         }
     }
 }

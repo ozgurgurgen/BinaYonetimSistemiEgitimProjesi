@@ -287,7 +287,8 @@
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BorcAyrinti";
-            this.Text = "BorcAyrinti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Borç Ayrıntısı";
             this.ResumeLayout(false);
             this.PerformLayout();
 

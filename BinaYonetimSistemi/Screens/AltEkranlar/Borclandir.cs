@@ -21,22 +21,28 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         }
         private void ComboBoxHazırla()
         {
-            List<Kullanicilar> komsular = new Controller.Komsu().KomsuGetir();
+            List<Kullanicilar> komsular = new Controller.Komsu().KomsulariGetir();
             foreach (var komsu in komsular)
             {
-                DaireSeçim.Items.Add(komsu.Adi + " " + komsu.Soyadi + " | Daire No: " +komsu.Adres1.DaireNo);
+                DaireSeçim.Items.Add(new FormControl.ComboBoxItem
+                {
+                    Text = komsu.Adi + " " + komsu.Soyadi,
+                    Value = komsu.Id
+                });
             }
         }
 
         private void BorclandirButon_Click(object sender, EventArgs e)
         {
             FormControl formControl = new FormControl();
+            FormControl.ComboBoxItem daireSecimi = DaireSeçim.SelectedItem as FormControl.ComboBoxItem;
             if (formControl.TextBoxesAreEmpty(this))
             {
                 new Borclar().Ekle(BorcTuruTextBox.Text, BorcAdiTextBox.Text, FaturaTarihi.Value.ToShortDateString(),
-                FaturaTutariTextBox.Text, FaturaNoTextBox.Text, false, FaturaAciklamasiTextBox.Text, DaireSeçim.SelectedItem.ToString());
+                FaturaTutariTextBox.Text, FaturaNoTextBox.Text, false, FaturaAciklamasiTextBox.Text, daireSecimi);
             }
             formControl.TexboxClear(this);
+ 
         }
 
         private void FaturaTutariTextBox_Leave(object sender, EventArgs e)
@@ -47,5 +53,8 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
             else
                 FaturaTutariTextBox.Text = String.Empty;
         }
+        
+
     }
+
 }

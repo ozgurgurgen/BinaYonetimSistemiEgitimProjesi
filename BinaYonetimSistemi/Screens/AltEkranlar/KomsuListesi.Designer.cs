@@ -89,7 +89,7 @@
             this.KomsuiList.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.KomsuiList.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.KomsuiList.Size = new System.Drawing.Size(976, 436);
+            this.KomsuiList.Size = new System.Drawing.Size(805, 414);
             this.KomsuiList.TabIndex = 34;
             // 
             // hareketId
@@ -122,11 +122,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1010, 518);
+            this.ClientSize = new System.Drawing.Size(839, 496);
             this.Controls.Add(this.KomsuiList);
             this.Controls.Add(this.label5);
             this.Name = "KomsuListesi";
-            this.Text = "KomsuListesi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Komşu Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.KomsuiList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

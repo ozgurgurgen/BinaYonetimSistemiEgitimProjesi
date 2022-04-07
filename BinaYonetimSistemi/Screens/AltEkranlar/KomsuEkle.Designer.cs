@@ -37,8 +37,6 @@
             this.MailTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.KullaniciAdiTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ParolaDogrulamaTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ParolaTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,14 +45,17 @@
             this.BinaNoTextBox = new System.Windows.Forms.TextBox();
             this.GirisButon = new System.Windows.Forms.Button();
             this.HataLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ParolaDogrulamaTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // KomsuAdiTextBox
             // 
+            this.KomsuAdiTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.KomsuAdiTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.KomsuAdiTextBox.Location = new System.Drawing.Point(27, 141);
             this.KomsuAdiTextBox.Name = "KomsuAdiTextBox";
-            this.KomsuAdiTextBox.Size = new System.Drawing.Size(161, 20);
+            this.KomsuAdiTextBox.Size = new System.Drawing.Size(161, 27);
             this.KomsuAdiTextBox.TabIndex = 0;
             // 
             // label1
@@ -92,10 +93,11 @@
             // 
             // KomsuSoyadiTextBox
             // 
+            this.KomsuSoyadiTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.KomsuSoyadiTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.KomsuSoyadiTextBox.Location = new System.Drawing.Point(212, 141);
             this.KomsuSoyadiTextBox.Name = "KomsuSoyadiTextBox";
-            this.KomsuSoyadiTextBox.Size = new System.Drawing.Size(161, 20);
+            this.KomsuSoyadiTextBox.Size = new System.Drawing.Size(161, 27);
             this.KomsuSoyadiTextBox.TabIndex = 1;
             // 
             // label4
@@ -111,10 +113,11 @@
             // 
             // MailTextBox
             // 
+            this.MailTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.MailTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.MailTextBox.Location = new System.Drawing.Point(212, 203);
             this.MailTextBox.Name = "MailTextBox";
-            this.MailTextBox.Size = new System.Drawing.Size(161, 20);
+            this.MailTextBox.Size = new System.Drawing.Size(161, 27);
             this.MailTextBox.TabIndex = 3;
             // 
             // label5
@@ -130,32 +133,12 @@
             // 
             // KullaniciAdiTextBox
             // 
+            this.KullaniciAdiTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.KullaniciAdiTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.KullaniciAdiTextBox.Location = new System.Drawing.Point(27, 203);
             this.KullaniciAdiTextBox.Name = "KullaniciAdiTextBox";
-            this.KullaniciAdiTextBox.Size = new System.Drawing.Size(161, 20);
+            this.KullaniciAdiTextBox.Size = new System.Drawing.Size(161, 27);
             this.KullaniciAdiTextBox.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(208, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 23);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Parola Doğrula";
-            // 
-            // ParolaDogrulamaTextBox
-            // 
-            this.ParolaDogrulamaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.ParolaDogrulamaTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ParolaDogrulamaTextBox.Location = new System.Drawing.Point(212, 264);
-            this.ParolaDogrulamaTextBox.Name = "ParolaDogrulamaTextBox";
-            this.ParolaDogrulamaTextBox.PasswordChar = '*';
-            this.ParolaDogrulamaTextBox.Size = new System.Drawing.Size(161, 21);
-            this.ParolaDogrulamaTextBox.TabIndex = 5;
             // 
             // label7
             // 
@@ -170,12 +153,12 @@
             // 
             // ParolaTextBox
             // 
-            this.ParolaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.ParolaTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.ParolaTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ParolaTextBox.Location = new System.Drawing.Point(27, 264);
             this.ParolaTextBox.Name = "ParolaTextBox";
             this.ParolaTextBox.PasswordChar = '*';
-            this.ParolaTextBox.Size = new System.Drawing.Size(161, 21);
+            this.ParolaTextBox.Size = new System.Drawing.Size(161, 27);
             this.ParolaTextBox.TabIndex = 4;
             // 
             // label8
@@ -191,10 +174,11 @@
             // 
             // DaireNoTextBox
             // 
+            this.DaireNoTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.DaireNoTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.DaireNoTextBox.Location = new System.Drawing.Point(212, 329);
             this.DaireNoTextBox.Name = "DaireNoTextBox";
-            this.DaireNoTextBox.Size = new System.Drawing.Size(161, 20);
+            this.DaireNoTextBox.Size = new System.Drawing.Size(161, 27);
             this.DaireNoTextBox.TabIndex = 7;
             // 
             // label9
@@ -210,10 +194,11 @@
             // 
             // BinaNoTextBox
             // 
+            this.BinaNoTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.BinaNoTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BinaNoTextBox.Location = new System.Drawing.Point(27, 329);
             this.BinaNoTextBox.Name = "BinaNoTextBox";
-            this.BinaNoTextBox.Size = new System.Drawing.Size(161, 20);
+            this.BinaNoTextBox.Size = new System.Drawing.Size(161, 27);
             this.BinaNoTextBox.TabIndex = 6;
             // 
             // GirisButon
@@ -239,6 +224,27 @@
             this.HataLabel.Name = "HataLabel";
             this.HataLabel.Size = new System.Drawing.Size(0, 13);
             this.HataLabel.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(208, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 23);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Parola Doğrula";
+            // 
+            // ParolaDogrulamaTextBox
+            // 
+            this.ParolaDogrulamaTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
+            this.ParolaDogrulamaTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ParolaDogrulamaTextBox.Location = new System.Drawing.Point(212, 264);
+            this.ParolaDogrulamaTextBox.Name = "ParolaDogrulamaTextBox";
+            this.ParolaDogrulamaTextBox.PasswordChar = '*';
+            this.ParolaDogrulamaTextBox.Size = new System.Drawing.Size(161, 27);
+            this.ParolaDogrulamaTextBox.TabIndex = 5;
             // 
             // KomsuEkle
             // 
@@ -266,6 +272,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.KomsuAdiTextBox);
             this.Name = "KomsuEkle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Komşu Ekle";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,8 +290,6 @@
         private System.Windows.Forms.TextBox MailTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox KullaniciAdiTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox ParolaDogrulamaTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox ParolaTextBox;
         private System.Windows.Forms.Label label8;
@@ -293,5 +298,7 @@
         private System.Windows.Forms.TextBox BinaNoTextBox;
         private System.Windows.Forms.Button GirisButon;
         private System.Windows.Forms.Label HataLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ParolaDogrulamaTextBox;
     }
 }

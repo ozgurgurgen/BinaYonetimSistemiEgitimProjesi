@@ -50,7 +50,7 @@
             // 
             this.BorclandirButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(151)))));
             this.BorclandirButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BorclandirButon.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold);
+            this.BorclandirButon.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.BorclandirButon.ForeColor = System.Drawing.Color.White;
             this.BorclandirButon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BorclandirButon.Location = new System.Drawing.Point(42, 488);
@@ -85,11 +85,11 @@
             // 
             // FaturaTutariTextBox
             // 
-            this.FaturaTutariTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.FaturaTutariTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.FaturaTutariTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FaturaTutariTextBox.Location = new System.Drawing.Point(42, 427);
             this.FaturaTutariTextBox.Name = "FaturaTutariTextBox";
-            this.FaturaTutariTextBox.Size = new System.Drawing.Size(233, 30);
+            this.FaturaTutariTextBox.Size = new System.Drawing.Size(233, 27);
             this.FaturaTutariTextBox.TabIndex = 40;
             this.FaturaTutariTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.FaturaTutariTextBox.Leave += new System.EventHandler(this.FaturaTutariTextBox_Leave);
@@ -107,7 +107,7 @@
             // 
             // FaturaAciklamasiTextBox
             // 
-            this.FaturaAciklamasiTextBox.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FaturaAciklamasiTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
             this.FaturaAciklamasiTextBox.Location = new System.Drawing.Point(42, 290);
             this.FaturaAciklamasiTextBox.Name = "FaturaAciklamasiTextBox";
             this.FaturaAciklamasiTextBox.Size = new System.Drawing.Size(504, 94);
@@ -127,11 +127,11 @@
             // 
             // FaturaNoTextBox
             // 
-            this.FaturaNoTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.FaturaNoTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.FaturaNoTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FaturaNoTextBox.Location = new System.Drawing.Point(313, 214);
             this.FaturaNoTextBox.Name = "FaturaNoTextBox";
-            this.FaturaNoTextBox.Size = new System.Drawing.Size(233, 30);
+            this.FaturaNoTextBox.Size = new System.Drawing.Size(233, 27);
             this.FaturaNoTextBox.TabIndex = 36;
             // 
             // label3
@@ -158,11 +158,11 @@
             // 
             // BorcAdiTextBox
             // 
-            this.BorcAdiTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.BorcAdiTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.BorcAdiTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BorcAdiTextBox.Location = new System.Drawing.Point(313, 137);
             this.BorcAdiTextBox.Name = "BorcAdiTextBox";
-            this.BorcAdiTextBox.Size = new System.Drawing.Size(233, 30);
+            this.BorcAdiTextBox.Size = new System.Drawing.Size(233, 27);
             this.BorcAdiTextBox.TabIndex = 33;
             // 
             // label1
@@ -178,11 +178,11 @@
             // 
             // BorcTuruTextBox
             // 
-            this.BorcTuruTextBox.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.BorcTuruTextBox.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.BorcTuruTextBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BorcTuruTextBox.Location = new System.Drawing.Point(42, 137);
             this.BorcTuruTextBox.Name = "BorcTuruTextBox";
-            this.BorcTuruTextBox.Size = new System.Drawing.Size(233, 30);
+            this.BorcTuruTextBox.Size = new System.Drawing.Size(233, 27);
             this.BorcTuruTextBox.TabIndex = 31;
             // 
             // label5
@@ -199,7 +199,7 @@
             // FaturaTarihi
             // 
             this.FaturaTarihi.CalendarFont = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FaturaTarihi.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.FaturaTarihi.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
             this.FaturaTarihi.Location = new System.Drawing.Point(42, 214);
             this.FaturaTarihi.MaximumSize = new System.Drawing.Size(233, 30);
             this.FaturaTarihi.MinimumSize = new System.Drawing.Size(233, 30);
@@ -211,11 +211,11 @@
             // DaireSeçim
             // 
             this.DaireSeçim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DaireSeçim.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Bold);
+            this.DaireSeçim.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DaireSeçim.FormattingEnabled = true;
             this.DaireSeçim.Location = new System.Drawing.Point(313, 427);
             this.DaireSeçim.Name = "DaireSeçim";
-            this.DaireSeçim.Size = new System.Drawing.Size(233, 31);
+            this.DaireSeçim.Size = new System.Drawing.Size(233, 27);
             this.DaireSeçim.TabIndex = 45;
             // 
             // Borclandir
@@ -241,7 +241,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.FaturaTarihi);
             this.Name = "Borclandir";
-            this.Text = "Borclandir";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Borçlandır";
             this.ResumeLayout(false);
             this.PerformLayout();
 

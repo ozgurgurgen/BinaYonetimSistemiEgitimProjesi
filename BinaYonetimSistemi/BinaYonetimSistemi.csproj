@@ -51,10 +51,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2.UI, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -67,6 +82,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -165,6 +181,18 @@
     <Compile Include="Screens\AltEkranlar\DuyuruAyrinti.Designer.cs">
       <DependentUpon>DuyuruAyrinti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruAyrintiDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruAyrintiDuzenle.Designer.cs">
+      <DependentUpon>DuyuruAyrintiDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\DuyuruDuzenle.Designer.cs">
+      <DependentUpon>DuyuruDuzenle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\AltEkranlar\DuyuruListele.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +210,18 @@
     </Compile>
     <Compile Include="Screens\AltEkranlar\KasaHareketleri.Designer.cs">
       <DependentUpon>KasaHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\KomsuDuzenlemeListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\KomsuDuzenlemeListesi.Designer.cs">
+      <DependentUpon>KomsuDuzenlemeListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\KomsuDüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AltEkranlar\KomsuDüzenle.Designer.cs">
+      <DependentUpon>KomsuDüzenle.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\AltEkranlar\KomsuEkle.cs">
       <SubType>Form</SubType>
@@ -245,6 +285,12 @@
     <EmbeddedResource Include="Screens\AltEkranlar\DuyuruAyrinti.resx">
       <DependentUpon>DuyuruAyrinti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\DuyuruAyrintiDuzenle.resx">
+      <DependentUpon>DuyuruAyrintiDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\DuyuruDuzenle.resx">
+      <DependentUpon>DuyuruDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\DuyuruListele.resx">
       <DependentUpon>DuyuruListele.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\KasaHareketleri.resx">
       <DependentUpon>KasaHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\KomsuDuzenlemeListesi.resx">
+      <DependentUpon>KomsuDuzenlemeListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AltEkranlar\KomsuDüzenle.resx">
+      <DependentUpon>KomsuDüzenle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\AltEkranlar\KomsuEkle.resx">
       <DependentUpon>KomsuEkle.cs</DependentUpon>
@@ -296,6 +348,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BinaYonetimSistemi.Entities.Borc.datasource" />
     <None Include="Properties\DataSources\BinaYonetimSistemi.Entities.Duyurular.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

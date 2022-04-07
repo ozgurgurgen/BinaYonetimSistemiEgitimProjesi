@@ -50,6 +50,8 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         {
             new Borclar().Ode(kullaniciBorcId, GirisEkrani.user.Id);
             new Tamamlandi("Ödeme İşlemi Başarılı Şekilde Tamamlandı").Show();
+            this.Close();
         }
+
     }
 }

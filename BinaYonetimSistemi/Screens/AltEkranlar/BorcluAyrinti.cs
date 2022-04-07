@@ -14,6 +14,8 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
 {
     public partial class BorcluAyrinti : Form
     {
+        int _borcId;
+        int seciliSatir;
         public BorcluAyrinti()
         {
             InitializeComponent();
@@ -31,15 +33,33 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
 
             for (int i = 0; i < liste.Count; i++)
             {
-                BorcList.Rows.Add(liste[i].Id, liste[i].BorcTuru, liste[i].BorcAdi, liste[i].BorcTarihi, liste[i].FaturaTutari +" ₺");
-                //Console.WriteLine(item.Id); Console.WriteLine(item.BorcTarihi); Console.WriteLine(item.BorcAdi);
-               // Console.WriteLine(item.FaturaTutari);
+                BorcList.Rows.Add(liste[i].Id, liste[i].BorcTuru, liste[i].BorcAdi, liste[i].BorcTarihi, liste[i].FaturaTutari + " ₺");
+
             }
 
-
-            BorcList.Rows.Add(ad);
         }
 
+        private void BorcList_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            seciliSatir = e.RowIndex;
+            _borcId = (int)BorcList.Rows[seciliSatir].Cells[0].Value;
+        }
 
+        private void SilButon_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(_borcId);
+            if (_borcId != 0)
+            {
+                new Borclar().Sil(_borcId);
+                BorcList.Rows.RemoveAt(seciliSatir);
+                _borcId = 0;                
+            }
+            else
+            {
+                this.Close();                
+            }
+            
+            
+        }
     }
 }

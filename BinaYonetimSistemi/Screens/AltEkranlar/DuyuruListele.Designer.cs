@@ -166,7 +166,8 @@
             this.Controls.Add(this.DuyuruList);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "DuyuruListele";
-            this.Text = "DuyuruListele";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Duyuru Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.DuyuruList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duyurularBindingSource)).EndInit();
             this.ResumeLayout(false);

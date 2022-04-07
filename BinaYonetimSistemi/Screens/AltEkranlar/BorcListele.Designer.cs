@@ -91,7 +91,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BorcListesi);
             this.Name = "BorcListele";
-            this.Text = "BorcListele";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Borçları Listele";
             ((System.ComponentModel.ISupportInitialize)(this.BorcListesi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

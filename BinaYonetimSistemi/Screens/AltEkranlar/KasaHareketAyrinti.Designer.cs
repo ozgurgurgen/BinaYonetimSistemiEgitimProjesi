@@ -243,7 +243,8 @@
             this.Controls.Add(this.BorcTuruTextBox);
             this.Controls.Add(this.label5);
             this.Name = "KasaHareketAyrinti";
-            this.Text = "KasaHareketAyrinti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Kasa Hareket Ayrıntısı";
             this.ResumeLayout(false);
             this.PerformLayout();
 

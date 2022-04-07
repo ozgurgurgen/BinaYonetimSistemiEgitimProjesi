@@ -15,13 +15,11 @@ namespace BinaYonetimSistemi.Screens.AltEkranlar
         public Tamamlandi()
         {
             InitializeComponent();
-            Console.WriteLine("Çalışıyor");
         }
         public Tamamlandi (string mesaj)
         {
             InitializeComponent();
             MesajLabel.Text = mesaj;
-            Console.WriteLine("Bu da çalıştı");
         }
                 
         private void TamamButon_Click(object sender, EventArgs e)

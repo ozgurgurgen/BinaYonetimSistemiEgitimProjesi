@@ -38,19 +38,16 @@ namespace BinaYonetimSistemi.Controller
         }
 
         public void Ekle(string borcTuru, string borcAdi, string faturaTarihi, string faturaTutari, string faturaNo,
-            bool kasadanOdenecek, string borcAciklamasi, string daireSeçimi)
+            bool kasadanOdenecek, string borcAciklamasi, FormControl.ComboBoxItem daireSeçimi)
         {
-            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+            int kullaniciId = (int)daireSeçimi.Value;
 
-            int index = daireSeçimi.IndexOf(':');
-            string daireNo = daireSeçimi.Substring(index + 2);
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+            Borc yeniBorc = new Borc();                     
 
             var sorgu = from kullanici in db.Kullanicilar
-                        where kullanici.Adres1.DaireNo == daireNo & kullanici.Adres1.SiteBina1.Id == GirisEkrani.user.Adres1.SiteBina1.Id
-                        select kullanici;
-
-
-            Entities.Borc yeniBorc = new Entities.Borc();
+                        where kullanici.Id == kullaniciId & kullanici.Adres1.SiteBina1.Id == GirisEkrani.user.Adres1.SiteBina1.Id
+                        select kullanici;           
 
             yeniBorc.BorcTuru = borcTuru;
             yeniBorc.BorcAdi = borcAdi;
@@ -155,6 +152,20 @@ namespace BinaYonetimSistemi.Controller
             public List<KullaniciBorc> borc { get; set; }
         }
 
+        public void Sil(int borcId)
+        {
+            Console.WriteLine("yakalama " + borcId);
+
+            BinaYonetimSistemiEntities db = new BinaYonetimSistemiEntities();
+            var sorgu = from _borc in db.KullaniciBorc
+                        where _borc.BorcId == borcId
+                        select _borc;
+            Borc borc = sorgu.FirstOrDefault().Borc;
+            db.Borc.Remove(borc);
+            db.KullaniciBorc.Remove(sorgu.FirstOrDefault());
+            db.SaveChanges();
+
+        }
 
     }
 }

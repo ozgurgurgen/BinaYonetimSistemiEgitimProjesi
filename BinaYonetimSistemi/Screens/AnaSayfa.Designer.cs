@@ -30,6 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.KullaniciAdiText = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.HesapAyarlari = new System.Windows.Forms.ToolStripMenuItem();
+            this.AidatAyari = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdminContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.KomsularimLabel = new System.Windows.Forms.Panel();
             this.KomsuSayi = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,24 +61,21 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.KomsuDuzenle = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.BorcOdemeyenler = new System.Windows.Forms.Panel();
             this.BorcOdemeyenLAbel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.DuyuruDuzenle = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
-            this.KullaniciAdiText = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.AdminContextMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.KomsularimLabel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.AktifDuyuru.SuspendLayout();
@@ -76,14 +84,10 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
+            this.KomsuDuzenle.SuspendLayout();
             this.BorcOdemeyenler.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.DuyuruDuzenle.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -97,9 +101,9 @@
             this.flowLayoutPanel1.Controls.Add(this.panel9);
             this.flowLayoutPanel1.Controls.Add(this.panel10);
             this.flowLayoutPanel1.Controls.Add(this.panel11);
-            this.flowLayoutPanel1.Controls.Add(this.panel12);
+            this.flowLayoutPanel1.Controls.Add(this.KomsuDuzenle);
             this.flowLayoutPanel1.Controls.Add(this.BorcOdemeyenler);
-            this.flowLayoutPanel1.Controls.Add(this.panel14);
+            this.flowLayoutPanel1.Controls.Add(this.DuyuruDuzenle);
             this.flowLayoutPanel1.Controls.Add(this.panel15);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -108,6 +112,114 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 55, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1207, 575);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // KullaniciAdiText
+            // 
+            this.KullaniciAdiText.AutoSize = true;
+            this.KullaniciAdiText.BackColor = System.Drawing.Color.Transparent;
+            this.KullaniciAdiText.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.KullaniciAdiText.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.KullaniciAdiText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KullaniciAdiText.Location = new System.Drawing.Point(94, 27);
+            this.KullaniciAdiText.Name = "KullaniciAdiText";
+            this.KullaniciAdiText.Size = new System.Drawing.Size(99, 19);
+            this.KullaniciAdiText.TabIndex = 1;
+            this.KullaniciAdiText.Text = "Kullanıcı Adı";
+            this.KullaniciAdiText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1207, 52);
+            this.panel5.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(298, 52);
+            this.panel7.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(291, 29);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "BINA YONETIM SISTEMI";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Controls.Add(this.KullaniciAdiText);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(1007, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 52);
+            this.panel6.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(95, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Hoşgeldin";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // HesapAyarlari
+            // 
+            this.HesapAyarlari.Name = "HesapAyarlari";
+            this.HesapAyarlari.Size = new System.Drawing.Size(150, 22);
+            this.HesapAyarlari.Text = "Hesap Ayarları";
+            this.HesapAyarlari.ToolTipText = "Hesap ayarlarınızı buradan yapabilirsiniz.";
+            // 
+            // AidatAyari
+            // 
+            this.AidatAyari.Name = "AidatAyari";
+            this.AidatAyari.Size = new System.Drawing.Size(150, 22);
+            this.AidatAyari.Text = "Aidat Ayarı";
+            this.AidatAyari.ToolTipText = "Aidat ayarlınızı buradan yapabilirsiniz.";
+            // 
+            // AdminContextMenu
+            // 
+            this.AdminContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.HesapAyarlari,
+            this.AidatAyari});
+            this.AdminContextMenu.Name = "contextMenuStrip1";
+            this.AdminContextMenu.Size = new System.Drawing.Size(151, 48);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.icono_cliente;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.InitialImage = global::BinaYonetimSistemi.Properties.Resources.icono_cliente;
+            this.pictureBox1.Location = new System.Drawing.Point(59, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 46);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // KomsularimLabel
             // 
@@ -363,15 +475,16 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Bina Bilgileri";
             // 
-            // panel12
+            // KomsuDuzenle
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(94)))), ((int)(((byte)(95)))));
-            this.panel12.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.komsu;
-            this.panel12.Controls.Add(this.label16);
-            this.panel12.Location = new System.Drawing.Point(3, 404);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(295, 167);
-            this.panel12.TabIndex = 6;
+            this.KomsuDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(94)))), ((int)(((byte)(95)))));
+            this.KomsuDuzenle.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.komsu;
+            this.KomsuDuzenle.Controls.Add(this.label16);
+            this.KomsuDuzenle.Location = new System.Drawing.Point(3, 404);
+            this.KomsuDuzenle.Name = "KomsuDuzenle";
+            this.KomsuDuzenle.Size = new System.Drawing.Size(295, 167);
+            this.KomsuDuzenle.TabIndex = 6;
+            this.KomsuDuzenle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KomsuDuzenle_MouseClick);
             // 
             // label16
             // 
@@ -424,16 +537,17 @@
             this.label18.TabIndex = 2;
             this.label18.Text = "Borçları Ödemeyenler";
             // 
-            // panel14
+            // DuyuruDuzenle
             // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(84)))), ((int)(((byte)(125)))));
-            this.panel14.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.duyuru;
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel14.Controls.Add(this.label20);
-            this.panel14.Location = new System.Drawing.Point(605, 404);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(295, 167);
-            this.panel14.TabIndex = 8;
+            this.DuyuruDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(84)))), ((int)(((byte)(125)))));
+            this.DuyuruDuzenle.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.duyuru;
+            this.DuyuruDuzenle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.DuyuruDuzenle.Controls.Add(this.label20);
+            this.DuyuruDuzenle.Location = new System.Drawing.Point(605, 404);
+            this.DuyuruDuzenle.Name = "DuyuruDuzenle";
+            this.DuyuruDuzenle.Size = new System.Drawing.Size(295, 167);
+            this.DuyuruDuzenle.TabIndex = 8;
+            this.DuyuruDuzenle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DuyuruDuzenle_MouseClick);
             // 
             // label20
             // 
@@ -472,92 +586,6 @@
             this.label22.Text = "Yeni Gider";
             this.label22.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GiderEkle_click);
             // 
-            // KullaniciAdiText
-            // 
-            this.KullaniciAdiText.AutoSize = true;
-            this.KullaniciAdiText.BackColor = System.Drawing.Color.Transparent;
-            this.KullaniciAdiText.Font = new System.Drawing.Font("Bahnschrift", 12F);
-            this.KullaniciAdiText.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.KullaniciAdiText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.KullaniciAdiText.Location = new System.Drawing.Point(94, 27);
-            this.KullaniciAdiText.Name = "KullaniciAdiText";
-            this.KullaniciAdiText.Size = new System.Drawing.Size(99, 19);
-            this.KullaniciAdiText.TabIndex = 1;
-            this.KullaniciAdiText.Text = "Kullanıcı Adı";
-            this.KullaniciAdiText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1207, 52);
-            this.panel5.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(298, 52);
-            this.panel7.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(291, 29);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "BINA YONETIM SISTEMI";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Controls.Add(this.KullaniciAdiText);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1007, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 52);
-            this.panel6.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(95, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Hoşgeldin";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::BinaYonetimSistemi.Properties.Resources.icono_cliente;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.InitialImage = global::BinaYonetimSistemi.Properties.Resources.icono_cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 46);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // AnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,6 +600,13 @@
             this.Text = "Bina Yönetim Sistemi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.AdminContextMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.KomsularimLabel.ResumeLayout(false);
             this.KomsularimLabel.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -588,20 +623,14 @@
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.KomsuDuzenle.ResumeLayout(false);
+            this.KomsuDuzenle.PerformLayout();
             this.BorcOdemeyenler.ResumeLayout(false);
             this.BorcOdemeyenler.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.DuyuruDuzenle.ResumeLayout(false);
+            this.DuyuruDuzenle.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,15 +664,18 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel KomsuDuzenle;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel BorcOdemeyenler;
         private System.Windows.Forms.Label BorcOdemeyenLAbel;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel DuyuruDuzenle;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem HesapAyarlari;
+        private System.Windows.Forms.ToolStripMenuItem AidatAyari;
+        private System.Windows.Forms.ContextMenuStrip AdminContextMenu;
     }
 }

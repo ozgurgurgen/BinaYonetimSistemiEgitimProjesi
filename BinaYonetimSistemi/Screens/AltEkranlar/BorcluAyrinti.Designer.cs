@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,7 +43,10 @@
             this.binaDaire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.islemZamani = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucret = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SilButon = new System.Windows.Forms.Button();
+            this.borcBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BorcList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.borcBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -71,7 +75,7 @@
             this.BinaDaireTextBox.Location = new System.Drawing.Point(313, 135);
             this.BinaDaireTextBox.Name = "BinaDaireTextBox";
             this.BinaDaireTextBox.ReadOnly = true;
-            this.BinaDaireTextBox.Size = new System.Drawing.Size(233, 30);
+            this.BinaDaireTextBox.Size = new System.Drawing.Size(233, 23);
             this.BinaDaireTextBox.TabIndex = 67;
             // 
             // label1
@@ -100,7 +104,7 @@
             this.AdTextBox.Location = new System.Drawing.Point(42, 135);
             this.AdTextBox.Name = "AdTextBox";
             this.AdTextBox.ReadOnly = true;
-            this.AdTextBox.Size = new System.Drawing.Size(233, 30);
+            this.AdTextBox.Size = new System.Drawing.Size(233, 23);
             this.AdTextBox.TabIndex = 65;
             // 
             // label5
@@ -151,13 +155,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.BorcList.DefaultCellStyle = dataGridViewCellStyle2;
-            this.BorcList.Location = new System.Drawing.Point(42, 201);
+            this.BorcList.Location = new System.Drawing.Point(22, 201);
             this.BorcList.Name = "BorcList";
             this.BorcList.ReadOnly = true;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.BorcList.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.BorcList.Size = new System.Drawing.Size(504, 340);
+            this.BorcList.Size = new System.Drawing.Size(554, 326);
             this.BorcList.TabIndex = 69;
+            this.BorcList.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorcList_CellEnter);
             // 
             // borcId
             // 
@@ -190,12 +195,33 @@
             this.ucret.Name = "ucret";
             this.ucret.ReadOnly = true;
             // 
+            // SilButon
+            // 
+            this.SilButon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SilButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.SilButon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SilButon.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 12F, System.Drawing.FontStyle.Bold);
+            this.SilButon.ForeColor = System.Drawing.Color.White;
+            this.SilButon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SilButon.Location = new System.Drawing.Point(313, 533);
+            this.SilButon.Name = "SilButon";
+            this.SilButon.Size = new System.Drawing.Size(263, 42);
+            this.SilButon.TabIndex = 70;
+            this.SilButon.Text = "Borç Sil";
+            this.SilButon.UseVisualStyleBackColor = false;
+            this.SilButon.Click += new System.EventHandler(this.SilButon_Click);
+            // 
+            // borcBindingSource
+            // 
+            this.borcBindingSource.DataSource = typeof(BinaYonetimSistemi.Entities.Borc);
+            // 
             // BorcluAyrinti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(588, 553);
+            this.ClientSize = new System.Drawing.Size(588, 587);
+            this.Controls.Add(this.SilButon);
             this.Controls.Add(this.BorcList);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BinaDaireTextBox);
@@ -203,8 +229,10 @@
             this.Controls.Add(this.AdTextBox);
             this.Controls.Add(this.label5);
             this.Name = "BorcluAyrinti";
-            this.Text = "BorcluAyrinti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Borçlu Ayrıntısı";
             ((System.ComponentModel.ISupportInitialize)(this.BorcList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.borcBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +251,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn binaDaire;
         private System.Windows.Forms.DataGridViewTextBoxColumn islemZamani;
         private System.Windows.Forms.DataGridViewTextBoxColumn ucret;
+        private System.Windows.Forms.Button SilButon;
+        private System.Windows.Forms.BindingSource borcBindingSource;
     }
 }

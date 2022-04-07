@@ -165,7 +165,7 @@
             this.Controls.Add(this.DuyuruBaslangic);
             this.Name = "YeniDuyuru";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "YeniDuyuru";
+            this.Text = "Yeni Duyuru";
             this.ResumeLayout(false);
             this.PerformLayout();
 
